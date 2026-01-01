@@ -1,0 +1,1 @@
+export default function(){return <h1>Contact – placeholder</h1>}
