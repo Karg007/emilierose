@@ -19,32 +19,33 @@ export default function Typewriter({
     setDisplayed("");
     setDone(false);
 
-    const t = window.setInterval(() => {
+    const interval = setInterval(() => {
       setDisplayed(text.slice(0, i + 1));
-      i += 1;
+      i++;
 
       if (i >= text.length) {
-        window.clearInterval(t);
+        clearInterval(interval);
         setDone(true);
       }
     }, speed);
 
-    return () => window.clearInterval(t);
+    return () => clearInterval(interval);
   }, [text, speed]);
 
   return (
     <span className={className}>
       {displayed}
-      <span className={`cursor ${done ? "blink" : ""}`}>|</span>
+      {done && <span className="cursor" />}
 
       <style jsx>{`
         .cursor {
+          display: inline-block;
+          width: 2px;
+          height: 1em;
           margin-left: 6px;
-          opacity: 1;
-        }
-
-        .blink {
+          background: currentColor;
           animation: blink 1s infinite;
+          vertical-align: middle;
         }
 
         @keyframes blink {
