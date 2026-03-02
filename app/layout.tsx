@@ -3,7 +3,7 @@ import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Émilie Rose",
-  description: "Photographie & Art - emilierose.ca",
+  description: "Photographie & Art - emilierose.ca"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

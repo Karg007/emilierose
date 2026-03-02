@@ -5,7 +5,6 @@
   font-style:normal;
   font-display:swap;
 }
-
 @font-face{
   font-family:"Moonscape";
   src:url("/fonts/Moonscape Regular.ttf") format("truetype");
@@ -36,7 +35,7 @@
 }
 
 :root{
-  --bg-red:#f45343;           /* comme le premier écran rouge dans ton export */
+  --bg-red:#f45343;
   --cream:#ffe7d8;
   --ink:#000;
   --butter:#faffc5;
