@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Typewriter from "../components/Typewriter";
+import Typewriter from "./components/Typewriter";
 
 export default function PhotoPage() {
   return (
