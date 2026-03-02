@@ -18,9 +18,9 @@ export default function PhotoPage() {
               </div>
             </div>
 
-            <div style={{ marginTop: 18, fontFamily: "Moonscape, serif", fontWeight: 200, fontSize: 56, lineHeight: 1 }}>
-              émilie rose
-            </div>
+           <div style={{ fontFamily: "Moonscape, serif", fontWeight: 200, fontSize: 56 }}>
+  <Typewriter text="émilie rose" />
+</div>
 
             <div style={{ marginTop: 18, fontFamily: "Orbit, monospace", letterSpacing: ".05em", textTransform: "uppercase", fontSize: 12, lineHeight: 1.8, maxWidth: 520 }}>
               <p style={{ marginTop: 0 }}>
