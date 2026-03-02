@@ -17,9 +17,9 @@ export default function Home() {
     <main style={{ minHeight: "100vh", background: "var(--bg-red)", color: "var(--cream)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "70px 24px" }}>
         <div style={{ display: "grid", placeItems: "center", gap: 28 }}>
-          <div style={{ fontFamily: "Moonscape, serif", fontWeight: 200, fontSize: 56, lineHeight: 1 }}>
-            émilie rose
-          </div>
+          <div style={{ fontFamily: "Moonscape, serif", fontWeight: 200, fontSize: 56 }}>
+  <Typewriter text="émilie rose" />
+</div>
 
           <div style={{ width: 110, height: 1, background: "var(--cream)", transform: "rotate(90deg)" }} />
 
