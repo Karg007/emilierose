@@ -19,14 +19,14 @@ export default function PhotoPage() {
               </div>
             </div>
 
-           <div style={{ fontFamily: "Moonscape, serif", fontWeight: 200, fontSize: 56 }}>
-  <Typewriter text="émilie rose" />
-</div>
+            <div style={{ marginTop: 18, fontFamily: "Moonscape, serif", fontWeight: 200, fontSize: 56, lineHeight: 1 }}>
+              <Typewriter text="émilie rose" speed={85} />
+            </div>
 
             <div style={{ marginTop: 18, fontFamily: "Orbit, monospace", letterSpacing: ".05em", textTransform: "uppercase", fontSize: 12, lineHeight: 1.8, maxWidth: 520 }}>
               <p style={{ marginTop: 0 }}>
-                Enchantée! Moi, c’est Émilie Rose, Photographe lifestyle pour les amoureux des souvenirs candides, uniques et chaleureux.
-                je vous souhaite la bienvenue ici, dans mon petit coin créatif du web.
+                Enchantée! Moi, c’est Émilie Rose, Photographe lifestyle pour les amoureux des souvenirs candides, uniques et chaleureux. je vous souhaite
+                la bienvenue ici, dans mon petit coin créatif du web.
               </p>
               <p>
                 L’intégralité du site est en route mais en attendant, écrivez-moi au{" "}
@@ -43,7 +43,7 @@ export default function PhotoPage() {
           </div>
 
           <aside>
-            <div style={{ width: "100%", aspectRatio: "2 / 3", background: "#ddd", border: "1px solid #eee" }} />
+            <div style={{ width: "100%", aspectRatio: "2 / 3", background: "#ddd", border: "1px solid #eee", overflow: "hidden" }} />
             <div style={{ marginTop: 10, fontFamily: "Orbit, monospace", fontSize: 11, letterSpacing: ".18em", opacity: 0.7 }}>
               Image à ajouter plus tard (public/images/...)
             </div>

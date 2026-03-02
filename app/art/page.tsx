@@ -23,17 +23,17 @@ export default function ArtPage() {
               </div>
             </div>
 
-            <div style={{ fontFamily: "Moonscape, serif", fontWeight: 200, fontSize: 56 }}>
-  <Typewriter text="émilie rose" />
-</div>
+            <div style={{ marginTop: 18, fontFamily: "Moonscape, serif", fontWeight: 200, fontSize: 56, lineHeight: 1 }}>
+              <Typewriter text="émilie rose" speed={85} />
+            </div>
 
             <div style={{ marginTop: 18, fontFamily: "Orbit, monospace", letterSpacing: ".05em", textTransform: "uppercase", fontSize: 12, lineHeight: 1.8, maxWidth: 520 }}>
               <p style={{ marginTop: 0 }}>
                 Enchantée! Moi, c’est Émilie Rose, artiste contemporaine et amoureuse de toutes les beautés brutes, nordiques et poétiques.
               </p>
               <p>
-                Je vous souhaite la bienvenue ici, dans mon petit coin créatif du web. L’intégralité du site est en route mais en attendant,
-                rendez-vous dans ma <span style={{ textDecoration: "underline" }}>boutique Etsy</span> pour zyeuter mes créations disponibles.
+                Je vous souhaite la bienvenue ici, dans mon petit coin créatif du web. L’intégralité du site est en route mais en attendant, rendez-vous
+                dans ma <span style={{ textDecoration: "underline" }}>boutique Etsy</span> pour zyeuter mes créations disponibles.
               </p>
               <p>À bientôt! xx</p>
               <p style={{ textAlign: "right" }}>ÉMILIE ROSE xx</p>
@@ -41,7 +41,7 @@ export default function ArtPage() {
           </div>
 
           <aside>
-            <div style={{ width: "100%", aspectRatio: "2 / 3", background: "#ddd", border: "1px solid #eee" }} />
+            <div style={{ width: "100%", aspectRatio: "2 / 3", background: "#ddd", border: "1px solid #eee", overflow: "hidden" }} />
             <div style={{ marginTop: 10, fontFamily: "Orbit, monospace", fontSize: 11, letterSpacing: ".18em", opacity: 0.7 }}>
               Image à ajouter plus tard (public/images/...)
             </div>
