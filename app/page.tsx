@@ -17,14 +17,14 @@ export default function Home() {
   return (
     <main style={{ minHeight: "100vh", background: "var(--bg-red)", color: "var(--cream)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "70px 24px" }}>
-        <div style={{ display: "grid", placeItems: "center", gap: 28 }}>
+        <div style={{ display: "grid", placeItems: "center", gap: 22 }}>
           <div style={{ fontFamily: "Moonscape, serif", fontWeight: 200, fontSize: 56, lineHeight: 1 }}>
             <Typewriter text="émilie rose" speed={85} />
           </div>
 
-          <div style={{ width: 110, height: 1, background: "var(--cream)", transform: "rotate(90deg)" }} />
+          {/* Removed vertical line */}
 
-          <nav style={{ display: "grid", gap: 12, textAlign: "center" }}>
+          <nav style={{ display: "grid", gap: 12, textAlign: "center", marginTop: 6 }}>
             <Link
               href="/art"
               style={{
@@ -66,23 +66,28 @@ export default function Home() {
         .carousel {
           position: relative;
           width: min(900px, 92vw);
-          height: min(520px, 52vh);
+          height: min(560px, 58vh);
           overflow: hidden;
-          background: rgba(0, 0, 0, 0.08);
+          background: rgba(0, 0, 0, 0.10);
           border: 1px solid rgba(255, 231, 216, 0.35);
+          display: grid;
+          place-items: center;
         }
+
+        /* Fit fully inside the box (no crop), both width + height */
         .carousel img {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
           display: block;
-          object-fit: cover;
+          object-fit: contain;
           object-position: center;
           opacity: 0;
-          transform: scale(1.001);
           transition: opacity 800ms ease;
+          background: rgba(0,0,0,0.10);
         }
+
         .carousel img.active {
           opacity: 1;
         }
