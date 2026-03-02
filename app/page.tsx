@@ -46,15 +46,16 @@ export default function Home() {
           place-items: center;
         }
 
-        .stage {
-          width: min(1200px, 92vw);
-          height: min(760px, 86vh);
-          display: grid;
-          grid-template-rows: auto 1fr auto;
-          justify-items: center;
-          align-items: start;
-          padding-top: 48px;
-        }
+       .stage {
+  width: min(1200px, 92vw);
+  height: min(820px, 90vh);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  align-items: center; /* centre verticalement */
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 
         .hero {
           display: flex;
@@ -82,14 +83,15 @@ export default function Home() {
         }
 
         .carousel {
-          width: clamp(190px, 16vw, 220px);
-          aspect-ratio: 1 / 1.2;
-          border: 3px solid var(--bg-red);
-          overflow: hidden;
-          position: relative;
-          margin-top: 8px;
-          background: transparent;
-        }
+  width: clamp(285px, 24vw, 330px); /* +50% */
+  aspect-ratio: 1 / 1.2;
+  border: 3px solid var(--bg-red);
+  overflow: hidden;
+  position: relative;
+  margin-top: 28px; /* plus d’espace sous le titre */
+  margin-bottom: 28px; /* équilibre avant les boutons */
+  background: transparent;
+}
         .carousel img {
           position: absolute;
           inset: 0;
@@ -105,12 +107,12 @@ export default function Home() {
           opacity: 1;
         }
 
-        .links {
-          display: grid;
-          gap: 10px;
-          text-align: center;
-          margin-bottom: 10px;
-        }
+       .links {
+  display: grid;
+  gap: 14px; /* un peu plus d’air */
+  text-align: center;
+  margin-top: 8px;
+}
         .links :global(a) {
           font-family: "Orbit", monospace;
           font-size: 10px;
