@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const IMAGES = Array.from({ length: 12 }, (_, i) => `/landing/${i + 1}.jpg`);
+const IMAGES = Array.from({ length: 12 }, (_, i) => `/images/${i + 1}.jpg`);
 
 export default function Home() {
   const [i, setI] = useState(0);
