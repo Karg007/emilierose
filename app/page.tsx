@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Typewriter from "../components/Typewriter";
 
 const IMAGES = Array.from({ length: 12 }, (_, i) => `/images/${i + 1}.jpg`);
 
