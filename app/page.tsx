@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const IMAGES = ['https://iili.io/qBKUwH7.md.jpg', 'https://iili.io/qBKUONe.md.jpg', 'https://iili.io/qBKUhSS.md.jpg', 'https://iili.io/qBKUXl2.md.jpg', 'https://iili.io/qBKUeDu.md.jpg', 'https://iili.io/qBKUvob.md.jpg', 'https://iili.io/qBKU8Vj.md.jpg', 'https://iili.io/qBKUSix.md.jpg', 'https://iili.io/qBKUgKQ.md.jpg', 'https://iili.io/qBKUrlV.md.jpg', 'https://iili.io/qBKU4UB.md.jpg', 'https://iili.io/qBKUPHP.md.jpg'];
+const IMAGES = Array.from({ length: 12 }, (_, i) => `/landing/${i + 1}.jpg`);
 
 export default function Home() {
   const [i, setI] = useState(0);
