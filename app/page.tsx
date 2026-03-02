@@ -1,4 +1,3 @@
-\
 "use client";
 
 import Link from "next/link";
@@ -47,7 +46,6 @@ export default function Home() {
           place-items: center;
         }
 
-        /* Match wide desktop composition */
         .stage {
           width: min(1200px, 92vw);
           height: min(760px, 86vh);
@@ -83,7 +81,6 @@ export default function Home() {
           background: rgba(255, 231, 216, 0.85);
         }
 
-        /* Photo block centered like mockup, with red border and NO background */
         .carousel {
           width: clamp(190px, 16vw, 220px);
           aspect-ratio: 1 / 1.2;
@@ -91,6 +88,7 @@ export default function Home() {
           overflow: hidden;
           position: relative;
           margin-top: 8px;
+          background: transparent;
         }
         .carousel img {
           position: absolute;
@@ -98,7 +96,7 @@ export default function Home() {
           width: 100%;
           height: 100%;
           display: block;
-          object-fit: cover; /* mockup looks cropped to fill */
+          object-fit: cover;
           object-position: center;
           opacity: 0;
           transition: opacity 700ms ease;
@@ -125,9 +123,16 @@ export default function Home() {
         }
 
         @media (max-width: 680px) {
-          .stage { height: auto; padding: 36px 0 22px; }
-          .hero { gap: 18px; }
-          .carousel { width: 200px; }
+          .stage {
+            height: auto;
+            padding: 36px 0 22px;
+          }
+          .hero {
+            gap: 18px;
+          }
+          .carousel {
+            width: 200px;
+          }
         }
       `}</style>
     </main>

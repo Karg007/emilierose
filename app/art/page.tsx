@@ -1,4 +1,3 @@
-\
 import Link from "next/link";
 import Typewriter from "../components/Typewriter";
 
@@ -77,7 +76,7 @@ export default function ArtPage() {
         .vline {
           width: 1px;
           height: clamp(78px, 7.2vw, 140px);
-          background: rgba(0,0,0,0.55);
+          background: rgba(0, 0, 0, 0.55);
         }
 
         .year {
@@ -105,22 +104,24 @@ export default function ArtPage() {
           line-height: 14px;
           letter-spacing: 0.06em;
           text-transform: uppercase;
-          color: rgba(0,0,0,0.55);
+          color: rgba(0, 0, 0, 0.55);
         }
 
-        .copy p { margin: 0 0 16px; }
+        .copy p {
+          margin: 0 0 16px;
+        }
 
         .hl {
           background: #f3f7ce;
           padding: 1px 3px;
-          color: rgba(0,0,0,0.65);
+          color: rgba(0, 0, 0, 0.65);
         }
 
         .sig {
           margin-top: 34px;
           text-align: center;
           letter-spacing: 0.10em;
-          color: rgba(0,0,0,0.55);
+          color: rgba(0, 0, 0, 0.55);
         }
 
         .back {
@@ -132,11 +133,13 @@ export default function ArtPage() {
           align-items: center;
         }
         .back :global(a) {
-          color: rgba(0,0,0,0.55);
+          color: rgba(0, 0, 0, 0.55);
           text-decoration: underline;
           text-underline-offset: 2px;
         }
-        .sep { opacity: 0.4; }
+        .sep {
+          opacity: 0.4;
+        }
 
         .right {
           position: relative;
@@ -151,12 +154,30 @@ export default function ArtPage() {
         }
 
         @media (max-width: 980px) {
-          .page { grid-template-columns: 1fr; }
-          .right { height: 55vh; }
-          .left { padding: 28px 22px 260px; }
-          .year { position: static; transform: none; margin-top: 18px; text-align: left; }
-          .copy { position: static; transform: none; width: 100%; margin-top: 26px; }
-          .back { justify-content: flex-start; }
+          .page {
+            grid-template-columns: 1fr;
+          }
+          .right {
+            height: 55vh;
+          }
+          .left {
+            padding: 28px 22px 260px;
+          }
+          .year {
+            position: static;
+            transform: none;
+            margin-top: 18px;
+            text-align: left;
+          }
+          .copy {
+            position: static;
+            transform: none;
+            width: 100%;
+            margin-top: 26px;
+          }
+          .back {
+            justify-content: flex-start;
+          }
         }
       `}</style>
     </main>
