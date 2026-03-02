@@ -7,41 +7,41 @@ export default function ArtPage() {
   return (
     <main className="page">
       <section className="left">
-        <header className="top">
-          <div className="brandRow">
-            <h1 className="brand">
-              <Typewriter text="ÉMILIE ROSE" speed={45} />
-            </h1>
-            <div className="vline" aria-hidden="true" />
-          </div>
-        </header>
+        <div className="brandRow">
+          <h1 className="brand">
+            <Typewriter text="ÉMILIE ROSE" speed={45} />
+          </h1>
+          <div className="vline" />
+        </div>
 
-        <div className="year" aria-label="Année">
+        <div className="year">
           <div>2 0</div>
           <div>2 6</div>
         </div>
 
         <div className="copy">
           <p>
-            ENCHANTÉE! MOI, C’EST ÉMILIE ROSE, ARTISTE CONTEMPORAINE ET AMOUREUSE DE TOUTES LES BEAUTÉS BRUTES, NORDIQUES ET POÉTIQUES.
+            ENCHANTÉE! MOI, C’EST ÉMILIE ROSE,
+            ARTISTE CONTEMPORAINE ET AMOUREUSE DES BEAUTÉS BRUTES.
           </p>
+
           <p>
-            JE VOUS SOUHAITE LA BIENVENUE ICI, DANS MON PETIT COIN CRÉATIF DU WEB. L’INTÉGRALITÉ DU SITE EST EN ROUTE MAIS EN ATTENDANT,
-            RENDEZ-VOUS DANS MA <span className="hl">BOUTIQUE ETSY</span> POUR ZYEUTER MES CRÉATIONS DISPONIBLES.
+            RENDEZ-VOUS DANS MA
+            <span className="hl"> BOUTIQUE ETSY </span>
+            POUR DÉCOUVRIR MES CRÉATIONS.
           </p>
-          <p>À BIENTÔT! XX</p>
+
           <div className="sig">ÉMILIE ROSE XX</div>
 
           <div className="back">
             <Link href="/">&lt; RETOUR</Link>
-            <span className="sep">|</span>
+            <span> | </span>
             <Link href="/photo">PHOTO</Link>
           </div>
         </div>
       </section>
 
-      <aside className="right" aria-label="Image art">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+      <aside className="right">
         <img src="/images/2.jpg" alt="Art" />
       </aside>
 
@@ -51,135 +51,78 @@ export default function ArtPage() {
           display: grid;
           grid-template-columns: 1fr 1fr;
           background: #fff;
-          color: #000;
         }
 
         .left {
-          position: relative;
-          padding: 40px 54px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 60px 70px;
         }
 
         .brandRow {
-          display: inline-flex;
+          display: flex;
           align-items: center;
-          gap: 28px;
+          gap: 30px;
         }
 
         .brand {
           margin: 0;
           font-family: "Moonscape", serif;
-          font-weight: 400;
-          font-size: clamp(66px, 6.8vw, 132px);
+          font-size: clamp(70px, 7vw, 130px);
           line-height: 0.9;
-          text-transform: uppercase;
-          letter-spacing: 0.01em;
         }
 
         .vline {
           width: 1px;
-          height: clamp(78px, 7.2vw, 140px);
-          background: rgba(0, 0, 0, 0.55);
+          height: 120px;
+          background: rgba(0,0,0,0.6);
         }
 
         .year {
-          position: absolute;
-          top: 45%;
-          left: 43%;
-          transform: translate(-50%, -50%);
           font-family: "Orbit", monospace;
-          font-size: 10px;
-          line-height: 18px;
-          letter-spacing: 0.34em;
+          font-size: 11px;
+          letter-spacing: 0.35em;
           opacity: 0.6;
-          text-transform: uppercase;
-          text-align: center;
+          margin: 40px 0;
         }
 
         .copy {
-          position: absolute;
-          left: 58%;
-          bottom: 96px;
-          transform: translateX(-50%);
-          width: min(280px, 48%);
           font-family: "Orbit", monospace;
-          font-size: 10px;
-          line-height: 14px;
+          font-size: 11px;
+          line-height: 16px;
           letter-spacing: 0.06em;
           text-transform: uppercase;
-          color: rgba(0, 0, 0, 0.55);
+          color: rgba(0,0,0,0.6);
+          max-width: 320px;
         }
 
-        .copy p {
-          margin: 0 0 16px;
-        }
+        .copy p { margin-bottom: 18px; }
 
         .hl {
           background: #f3f7ce;
-          padding: 1px 3px;
-          color: rgba(0, 0, 0, 0.65);
+          padding: 2px 4px;
         }
 
         .sig {
-          margin-top: 34px;
+          margin-top: 30px;
           text-align: center;
-          letter-spacing: 0.10em;
-          color: rgba(0, 0, 0, 0.55);
         }
 
         .back {
-          margin-top: 18px;
+          margin-top: 25px;
           text-align: center;
-          display: flex;
-          gap: 10px;
-          justify-content: center;
-          align-items: center;
-        }
-        .back :global(a) {
-          color: rgba(0, 0, 0, 0.55);
-          text-decoration: underline;
-          text-underline-offset: 2px;
-        }
-        .sep {
-          opacity: 0.4;
         }
 
-        .right {
-          position: relative;
-          overflow: hidden;
-        }
         .right img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          object-position: center;
-          display: block;
         }
 
-        @media (max-width: 980px) {
-          .page {
-            grid-template-columns: 1fr;
-          }
-          .right {
-            height: 55vh;
-          }
-          .left {
-            padding: 28px 22px 260px;
-          }
-          .year {
-            position: static;
-            transform: none;
-            margin-top: 18px;
-            text-align: left;
-          }
-          .copy {
-            position: static;
-            transform: none;
-            width: 100%;
-            margin-top: 26px;
-          }
-          .back {
-            justify-content: flex-start;
-          }
+        @media (max-width: 1000px) {
+          .page { grid-template-columns: 1fr; }
+          .right { height: 55vh; }
         }
       `}</style>
     </main>
