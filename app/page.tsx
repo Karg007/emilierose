@@ -1,3 +1,4 @@
+\
 "use client";
 
 import Link from "next/link";
@@ -10,21 +11,19 @@ export default function Home() {
   const [i, setI] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setI((v) => (v + 1) % IMAGES.length), 4000);
+    const t = setInterval(() => setI((v) => (v + 1) % IMAGES.length), 3500);
     return () => clearInterval(t);
   }, []);
 
   return (
     <main className="landing">
-      <div className="wrap">
-        <div className="title">
-          <Typewriter text="émilie rose" speed={65} />
-        </div>
-
-        <nav className="links" aria-label="Navigation">
-          <Link href="/art">art &gt;</Link>
-          <Link href="/photo">photo &gt;</Link>
-        </nav>
+      <div className="stage">
+        <header className="hero">
+          <h1 className="title">
+            <Typewriter text="ÉMILIE ROSE" speed={55} />
+          </h1>
+          <div className="vline" aria-hidden="true" />
+        </header>
 
         <div className="carousel" aria-label="Carrousel landing">
           {IMAGES.map((src, idx) => (
@@ -33,9 +32,10 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="email">
-          <a href="mailto:info@emilierose.ca">info@emilierose.ca</a>
-        </div>
+        <nav className="links" aria-label="Navigation">
+          <Link href="/photo">PHOTO &gt;</Link>
+          <Link href="/art">ART &gt;</Link>
+        </nav>
       </div>
 
       <style jsx>{`
@@ -47,46 +47,50 @@ export default function Home() {
           place-items: center;
         }
 
-        .wrap {
+        /* Match wide desktop composition */
+        .stage {
           width: min(1200px, 92vw);
-          padding: 64px 0;
+          height: min(760px, 86vh);
           display: grid;
+          grid-template-rows: auto 1fr auto;
           justify-items: center;
-          gap: 22px;
+          align-items: start;
+          padding-top: 48px;
         }
 
-        /* Canva export shows ~106.667px size & ~99px line-height on desktop */
+        .hero {
+          display: flex;
+          align-items: center;
+          gap: 28px;
+          margin-bottom: 18px;
+        }
+
         .title {
           font-family: "Moonscape", serif;
           font-weight: 200;
-          font-size: clamp(56px, 6.6vw, 106.667px);
-          line-height: 0.93;
-          color: var(--cream);
-        }
-
-        .links {
-          display: grid;
-          gap: 10px;
-          text-align: center;
-          margin-top: 4px;
-        }
-        .links :global(a) {
-          font-family: "Orbit", monospace;
-          font-size: 12px;
-          line-height: 16px;
-          letter-spacing: 0.3em;
+          font-size: clamp(64px, 7.2vw, 118px);
+          line-height: 0.95;
+          letter-spacing: 0.02em;
+          margin: 0;
           text-transform: uppercase;
-          text-decoration: underline;
           color: var(--cream);
+          white-space: nowrap;
         }
 
-        /* Canva export images on landing appear ~570x857 px */
+        .vline {
+          width: 1px;
+          height: clamp(52px, 6.5vw, 104px);
+          background: rgba(255, 231, 216, 0.85);
+        }
+
+        /* Photo block centered like mockup, with red border and NO background */
         .carousel {
-          width: min(570px, 78vw);
-          aspect-ratio: 570 / 857;
+          width: clamp(190px, 16vw, 220px);
+          aspect-ratio: 1 / 1.2;
+          border: 3px solid var(--bg-red);
           overflow: hidden;
           position: relative;
-          background: rgba(0, 0, 0, 0.10);
+          margin-top: 8px;
         }
         .carousel img {
           position: absolute;
@@ -94,28 +98,36 @@ export default function Home() {
           width: 100%;
           height: 100%;
           display: block;
-          object-fit: contain; /* fit in width + height (no overflow) */
+          object-fit: cover; /* mockup looks cropped to fill */
           object-position: center;
           opacity: 0;
-          transition: opacity 800ms ease;
-          background: rgba(0, 0, 0, 0.10);
+          transition: opacity 700ms ease;
         }
         .carousel img.active {
           opacity: 1;
         }
 
-        .email {
+        .links {
+          display: grid;
+          gap: 10px;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        .links :global(a) {
           font-family: "Orbit", monospace;
-          font-size: 12px;
-          line-height: 16px;
-          letter-spacing: 0.22em;
-          opacity: 0.9;
-          margin-top: 4px;
+          font-size: 10px;
+          line-height: 14px;
+          letter-spacing: 0.34em;
+          text-transform: uppercase;
+          color: var(--cream);
+          text-decoration: underline;
+          text-underline-offset: 2px;
         }
 
-        @media (max-height: 740px) {
-          .wrap { padding: 44px 0; }
-          .carousel { width: min(520px, 76vw); }
+        @media (max-width: 680px) {
+          .stage { height: auto; padding: 36px 0 22px; }
+          .hero { gap: 18px; }
+          .carousel { width: 200px; }
         }
       `}</style>
     </main>
