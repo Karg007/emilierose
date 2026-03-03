@@ -1,35 +1,8 @@
-:root {
-  --bg-red: #b23a2f;
-  --cream: #ffe7d8;
-  --highlight: #f3f7ce;
-}
-
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
-
 * { box-sizing: border-box; }
-
-body {
-  font-family: "Orbit", monospace;
-  -webkit-font-smoothing: antialiased;
-}
-
-a { color: inherit; text-decoration: none; }
-
-/* Fonts (adjust names if needed) */
-@font-face {
-  font-family: "Moonscape";
-  src: url("/fonts/Moonscape Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Orbit";
-  src: url("/fonts/Orbit-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
+body { font-family: sans-serif; }
+a { text-decoration: none; color: inherit; }
