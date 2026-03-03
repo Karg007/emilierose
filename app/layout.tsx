@@ -2,12 +2,12 @@ import "../styles/globals.css";
 
 export const metadata = {
   title: "Émilie Rose",
-  description: "Photographie & Art"
+  description: "Photographie & Art",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr-CA">
       <body>{children}</body>
     </html>
   );

@@ -1,12 +1,14 @@
 "use client";
+
 import { useEffect, useState } from "react";
 
-type Props = {
+type TypewriterProps = {
   text: string;
   speed?: number;
+  className?: string;
 };
 
-export default function Typewriter({ text, speed = 60 }: Props) {
+export default function Typewriter({ text, speed = 60, className }: TypewriterProps) {
   const [displayed, setDisplayed] = useState<string>("");
   const [done, setDone] = useState<boolean>(false);
 
@@ -15,22 +17,26 @@ export default function Typewriter({ text, speed = 60 }: Props) {
     setDisplayed("");
     setDone(false);
 
-    const interval = setInterval(() => {
+    const interval = window.setInterval(() => {
       setDisplayed(text.slice(0, i + 1));
-      i++;
+      i += 1;
       if (i >= text.length) {
-        clearInterval(interval);
+        window.clearInterval(interval);
         setDone(true);
       }
     }, speed);
 
-    return () => clearInterval(interval);
+    return () => window.clearInterval(interval);
   }, [text, speed]);
 
   return (
-    <span className="tw">
+    <span className={`tw ${className ?? ""}`}>
       {displayed}
       <style jsx>{`
+        .tw {
+          display: inline-block;
+          position: relative;
+        }
         .tw::after {
           content: "";
           display: ${done ? "inline-block" : "none"};
@@ -38,11 +44,12 @@ export default function Typewriter({ text, speed = 60 }: Props) {
           height: 1em;
           margin-left: 5px;
           background: currentColor;
+          vertical-align: -0.1em;
           animation: blink 1s infinite;
         }
         @keyframes blink {
-          0%,50%,100%{opacity:1;}
-          25%,75%{opacity:0;}
+          0%, 50%, 100% { opacity: 1; }
+          25%, 75% { opacity: 0; }
         }
       `}</style>
     </span>
