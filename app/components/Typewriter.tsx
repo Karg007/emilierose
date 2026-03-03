@@ -2,15 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function Typewriter({
-  text,
-  speed = 60,
-  className
-}: {
-  text: string;
-  speed?: number;
-  className?: string;
-}) {
+export default function Typewriter({ text, speed = 60 }) {
   const [displayed, setDisplayed] = useState("");
   const [done, setDone] = useState(false);
 
@@ -22,7 +14,6 @@ export default function Typewriter({
     const interval = setInterval(() => {
       setDisplayed(text.slice(0, i + 1));
       i++;
-
       if (i >= text.length) {
         clearInterval(interval);
         setDone(true);
@@ -33,14 +24,9 @@ export default function Typewriter({
   }, [text, speed]);
 
   return (
-    <span className={`tw ${className ?? ""}`}>
+    <span className="tw">
       {displayed}
       <style jsx>{`
-        .tw {
-          display: inline-block;
-          position: relative;
-        }
-
         .tw::after {
           content: "";
           display: ${done ? "inline-block" : "none"};
@@ -48,13 +34,11 @@ export default function Typewriter({
           height: 1em;
           margin-left: 5px;
           background: currentColor;
-          vertical-align: -0.1em;
           animation: blink 1s infinite;
         }
-
         @keyframes blink {
-          0%, 50%, 100% { opacity: 1; }
-          25%, 75% { opacity: 0; }
+          0%,50%,100%{opacity:1;}
+          25%,75%{opacity:0;}
         }
       `}</style>
     </span>
