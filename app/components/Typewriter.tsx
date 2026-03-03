@@ -38,7 +38,6 @@ export default function Typewriter({ text, speed = 60, className }: TypewriterPr
           display: inline-block;
           position: relative;
         }
-
         .tw::after {
           content: "";
           display: ${done ? "inline-block" : "none"};
@@ -49,7 +48,6 @@ export default function Typewriter({ text, speed = 60, className }: TypewriterPr
           vertical-align: -0.1em;
           animation: blink 1s infinite;
         }
-
         @keyframes blink {
           0%, 50%, 100% { opacity: 1; }
           25%, 75% { opacity: 0; }
