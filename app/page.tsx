@@ -1,133 +1,106 @@
+
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Typewriter from "./components/Typewriter";
 
-export default function PhotoPage() {
+const IMAGES = Array.from({ length: 12 }, (_, i) => `/images/${i + 1}.jpg`);
+
+export default function Home() {
+  const [i, setI] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setI((v) => (v + 1) % IMAGES.length), 3500);
+    return () => clearInterval(t);
+  }, []);
+
   return (
-    <main className="page">
-      <section className="left">
-        <div className="top">
-          <div className="brandRow">
-            <h1 className="brand">
-              <Typewriter text="ÉMILIE ROSE" speed={45} />
-            </h1>
-            <div className="vline" />
-          </div>
+    <main className="landing">
+      <div className="stage">
+        <header className="hero">
+          <h1 className="title">
+            <Typewriter text="ÉMILIE ROSE" speed={55} />
+          </h1>
+          <div className="vline" />
+        </header>
+
+        <div className="carousel">
+          {IMAGES.map((src, idx) => (
+            <img key={src} src={src} alt="" className={idx === i ? "active" : ""} />
+          ))}
         </div>
 
-        <div className="year">
-          <div>2 0</div>
-          <div>2 6</div>
-        </div>
-
-        <div className="copy">
-          <p>
-            ENCHANTÉE! MOI, C’EST ÉMILIE ROSE, PHOTOGRAPHE LIFESTYLE POUR LES AMOUREUX DES SOUVENIRS CANDIDES, UNIQUES ET CHALEUREUX.
-            JE VOUS SOUHAITE LA BIENVENUE ICI, DANS MON PETIT COIN CRÉATIF DU WEB.
-          </p>
-
-          <p>
-            L’INTÉGRALITÉ DU SITE EST EN ROUTE MAIS EN ATTENDANT,
-            ÉCRIVEZ-MOI AU <span className="hl">INFO@EMILIEROSE.CA</span>
-            POUR RÉSERVER VOTRE MOMENT PHOTO.
-          </p>
-
-          <p>
-            MERCI À L’AVANCE DE ME CONFIER VOS PLUS BEAUX MOMENTS.
-            J’AI TRÈS HÂTE DE FAIRE VOTRE RENCONTRE.
-          </p>
-
-          <div className="sig">ÉMILIE ROSE XX</div>
-
-          <div className="back">
-            <Link href="/">&lt; RETOUR</Link>
-          </div>
-        </div>
-      </section>
-
-      <aside className="right">
-        <img src="/images/1.jpg" alt="Photographie" />
-      </aside>
+        <nav className="links">
+          <Link href="/photo">PHOTO &gt;</Link>
+          <Link href="/art">ART &gt;</Link>
+        </nav>
+      </div>
 
       <style jsx>{`
-        .page {
+        .landing {
           min-height: 100vh;
+          background: var(--bg-red);
+          color: var(--cream);
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          background: #fff;
+          place-items: center;
         }
 
-        .left {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          padding: 60px 70px;
+        .stage {
+          display: grid;
+          gap: 26px;
+          justify-items: center;
+          align-content: center;
         }
 
-        .brandRow {
+        .hero {
           display: flex;
           align-items: center;
-          gap: 30px;
+          gap: 28px;
         }
 
-        .brand {
+        .title {
+          font-size: clamp(64px, 7vw, 118px);
           margin: 0;
-          font-family: "Moonscape", serif;
-          font-size: clamp(70px, 7vw, 130px);
-          line-height: 0.9;
         }
 
         .vline {
           width: 1px;
-          height: 120px;
-          background: rgba(0,0,0,0.6);
+          height: 100px;
+          background: var(--cream);
         }
 
-        .year {
-          font-family: "Orbit", monospace;
-          font-size: 11px;
-          letter-spacing: 0.35em;
-          opacity: 0.6;
-          margin: 40px 0;
+        .carousel {
+          width: clamp(285px, 24vw, 330px);
+          aspect-ratio: 1 / 1.2;
+          border: 3px solid var(--bg-red);
+          overflow: hidden;
+          position: relative;
         }
 
-        .copy {
-          font-family: "Orbit", monospace;
-          font-size: 11px;
-          line-height: 16px;
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-          color: rgba(0,0,0,0.6);
-          max-width: 320px;
-        }
-
-        .copy p { margin-bottom: 18px; }
-
-        .hl {
-          background: #f3f7ce;
-          padding: 2px 4px;
-        }
-
-        .sig {
-          margin-top: 30px;
-          text-align: center;
-        }
-
-        .back {
-          margin-top: 25px;
-          text-align: center;
-        }
-
-        .right img {
+        .carousel img {
+          position: absolute;
+          inset: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
+          opacity: 0;
+          transition: opacity 700ms ease;
         }
 
-        @media (max-width: 1000px) {
-          .page { grid-template-columns: 1fr; }
-          .right { height: 55vh; }
+        .carousel img.active {
+          opacity: 1;
+        }
+
+        .links {
+          display: grid;
+          gap: 14px;
+          text-align: center;
+        }
+
+        .links a {
+          color: var(--cream);
+          text-decoration: underline;
         }
       `}</style>
     </main>
