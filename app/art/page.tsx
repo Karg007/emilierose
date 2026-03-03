@@ -1,23 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Typewriter from "../components/Typewriter";
 
-const IMAGES: string[] = Array.from({ length: 5 }, (_, i) =>
-  `/images/art/${String(i + 1).padStart(2, "0")}.jpg`
-);
-
 export default function ArtPage() {
+  const images = useMemo(
+    () =>
+      Array.from({ length: 5 }, (_, i) => `/images/art/${String(i + 1).padStart(2, "0")}.jpg`),
+    []
+  );
+
   const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {
     const id = window.setInterval(() => {
-      setIndex((prev) => (prev + 1) % IMAGES.length);
+      setIndex((prev) => (prev + 1) % images.length);
     }, 3500);
-
     return () => window.clearInterval(id);
-  }, []);
+  }, [images.length]);
 
   return (
     <main className="page">
@@ -34,8 +35,15 @@ export default function ArtPage() {
       </section>
 
       <aside className="carousel" aria-label="Carrousel art">
-        {IMAGES.map((src, i) => (
-          <img key={src} src={src} alt="" className={i === index ? "active" : ""} />
+        {images.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            decoding="async"
+            loading={i === 0 ? "eager" : "lazy"}
+            style={{ opacity: i === index ? 1 : 0 }}
+          />
         ))}
       </aside>
 
@@ -86,27 +94,31 @@ export default function ArtPage() {
         .carousel {
           position: relative;
           overflow: hidden;
+          min-height: 100vh;
           background: #f3f3f3;
         }
 
-        .carousel img {
+        .carousel :global(img) {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
-          opacity: 0;
           transition: opacity 0.8s ease;
-        }
-
-        .carousel img.active {
-          opacity: 1;
+          display: block;
         }
 
         @media (max-width: 980px) {
-          .page { grid-template-columns: 1fr; }
-          .carousel { height: 60vh; }
-          .left { padding: 48px 22px; }
+          .page {
+            grid-template-columns: 1fr;
+          }
+          .carousel {
+            height: 60vh;
+            min-height: 60vh;
+          }
+          .left {
+            padding: 48px 22px;
+          }
         }
       `}</style>
     </main>
