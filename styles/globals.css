@@ -1,47 +1,35 @@
-@font-face{
-  font-family:"Orbit";
-  src:url("/fonts/Orbit-Regular.ttf") format("truetype");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Moonscape";
-  src:url("/fonts/Moonscape Regular.ttf") format("truetype");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Moonscape";
-  src:url("/fonts/Moonscape Bold TTF.ttf") format("truetype");
-  font-weight:700;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Moonscape";
-  src:url("/fonts/Moonscape Thin TTF.ttf") format("truetype");
-  font-weight:200;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Moonscape";
-  src:url("/fonts/Moonscape Italic TTF.ttf") format("truetype");
-  font-weight:400;
-  font-style:italic;
-  font-display:swap;
+:root {
+  --bg-red: #b23a2f;
+  --cream: #ffe7d8;
+  --highlight: #f3f7ce;
 }
 
-:root{
-  --bg-red:#f45343;
-  --cream:#ffe7d8;
-  --ink:#000;
-  --butter:#faffc5;
-  --page:#ffffff;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-html,body{height:100%; margin:0;}
-*{box-sizing:border-box;}
-a{color:inherit; text-decoration:none;}
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Orbit", monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* Fonts (adjust names if needed) */
+@font-face {
+  font-family: "Moonscape";
+  src: url("/fonts/Moonscape Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Orbit";
+  src: url("/fonts/Orbit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}

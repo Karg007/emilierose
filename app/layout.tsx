@@ -1,9 +1,8 @@
-
-import "./globals.css";
+import "../styles/globals.css";
 
 export const metadata = {
   title: "Émilie Rose",
-  description: "Photographie et Art"
+  description: "Photographie & Art"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
