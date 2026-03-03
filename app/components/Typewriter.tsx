@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -23,6 +22,7 @@ export default function Typewriter({
     const interval = setInterval(() => {
       setDisplayed(text.slice(0, i + 1));
       i++;
+
       if (i >= text.length) {
         clearInterval(interval);
         setDone(true);

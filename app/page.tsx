@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -40,15 +39,15 @@ export default function Home() {
       <style jsx>{`
         .landing {
           min-height: 100vh;
-          background: var(--bg-red);
-          color: var(--cream);
+          background: #b23a2f;
+          color: #ffe7d8;
           display: grid;
           place-items: center;
         }
 
         .stage {
           display: grid;
-          gap: 26px;
+          gap: 28px;
           justify-items: center;
           align-content: center;
         }
@@ -60,20 +59,21 @@ export default function Home() {
         }
 
         .title {
-          font-size: clamp(64px, 7vw, 118px);
+          font-size: clamp(64px, 7vw, 120px);
           margin: 0;
+          text-transform: uppercase;
         }
 
         .vline {
           width: 1px;
           height: 100px;
-          background: var(--cream);
+          background: rgba(255,255,255,0.8);
         }
 
         .carousel {
-          width: clamp(285px, 24vw, 330px);
+          width: clamp(300px, 26vw, 360px);
           aspect-ratio: 1 / 1.2;
-          border: 3px solid var(--bg-red);
+          border: 3px solid #b23a2f;
           overflow: hidden;
           position: relative;
         }
@@ -85,7 +85,7 @@ export default function Home() {
           height: 100%;
           object-fit: cover;
           opacity: 0;
-          transition: opacity 700ms ease;
+          transition: opacity .7s ease;
         }
 
         .carousel img.active {
@@ -94,13 +94,16 @@ export default function Home() {
 
         .links {
           display: grid;
-          gap: 14px;
+          gap: 12px;
           text-align: center;
         }
 
-        .links a {
-          color: var(--cream);
+        .links :global(a) {
+          font-size: 11px;
+          letter-spacing: .3em;
+          text-transform: uppercase;
           text-decoration: underline;
+          color: #ffe7d8;
         }
       `}</style>
     </main>
