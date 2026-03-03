@@ -19,33 +19,38 @@ export default function Typewriter({
     setDisplayed("");
     setDone(false);
 
-    const interval = setInterval(() => {
+    const interval = window.setInterval(() => {
       setDisplayed(text.slice(0, i + 1));
-      i++;
+      i += 1;
 
       if (i >= text.length) {
-        clearInterval(interval);
+        window.clearInterval(interval);
         setDone(true);
       }
     }, speed);
 
-    return () => clearInterval(interval);
+    return () => window.clearInterval(interval);
   }, [text, speed]);
 
   return (
-    <span className={className}>
+    <span className={`${className ?? ""} tw`}>
       {displayed}
-      {done && <span className="cursor" />}
-
       <style jsx>{`
-        .cursor {
+        .tw {
+          position: relative;
           display: inline-block;
+        }
+
+        /* Single caret rendered via CSS (no literal '|' character). */
+        .tw::after {
+          content: "";
+          display: ${done ? "inline-block" : "none"};
           width: 2px;
           height: 1em;
           margin-left: 6px;
           background: currentColor;
+          vertical-align: -0.1em;
           animation: blink 1s infinite;
-          vertical-align: middle;
         }
 
         @keyframes blink {
