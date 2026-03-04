@@ -4,96 +4,79 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Typewriter from "./components/Typewriter";
 
-type Mode = "plain" | "padded";
-
-function makeImages(mode: Mode): string[] {
-  return Array.from({ length: 12 }, (_, i) => {
-    const n = i + 1;
-    return mode === "plain" ? `/images/${n}.jpg` : `/images/${String(n).padStart(2, "0")}.jpg`;
-  });
-}
-
 export default function Home() {
-  const [mode, setMode] = useState<Mode>("plain");
-  const images = useMemo(() => makeImages(mode), [mode]);
+  const images = useMemo(
+    () => Array.from({ length: 12 }, (_, i) => `/images/${i + 1}.jpg`),
+    []
+  );
+
   const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {
     const id = window.setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
+      setIndex((p) => (p + 1) % images.length);
     }, 3000);
     return () => window.clearInterval(id);
   }, [images.length]);
 
-  // If first image fails (common when files are 01..12), switch mode once.
-  const handleFirstError = () => {
-    if (mode === "plain") setMode("padded");
-  };
-
   return (
     <main className="page">
-      <section className="hero">
-        <h1 className="title">
-          <Typewriter text="ÉMILIE ROSE" speed={45} />
-        </h1>
+      <h1 className="title">
+        <Typewriter text="ÉMILIE ROSE" speed={45} />
+      </h1>
 
-        <div className="carousel" aria-label="Carrousel landing">
-          {images.map((src, i) => (
-            <img
-              key={src}
-              src={src}
-              alt=""
-              decoding="async"
-              loading={i === 0 ? "eager" : "lazy"}
-              onError={i === 0 ? handleFirstError : undefined}
-              style={{ opacity: i === index ? 1 : 0 }}
-            />
-          ))}
-        </div>
+      <div className="carousel" aria-label="Carrousel landing">
+        {images.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            decoding="async"
+            loading={i === 0 ? "eager" : "lazy"}
+            style={{ opacity: i === index ? 1 : 0 }}
+          />
+        ))}
+      </div>
 
-        <nav className="links" aria-label="Navigation principale">
-          <Link href="/photo" className="pill">PHOTOGRAPHIE</Link>
-          <Link href="/art" className="pill">ART</Link>
-        </nav>
-      </section>
+      <nav className="links" aria-label="Navigation">
+        <Link className="link" href="/photo">
+          PHOTO&nbsp;&nbsp;&gt;
+        </Link>
+        <Link className="link" href="/art">
+          ART&nbsp;&nbsp;&gt;
+        </Link>
+      </nav>
 
       <style jsx>{`
         .page {
           min-height: 100vh;
-          background: var(--bg-red);
-          color: var(--cream);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .hero {
-          width: min(1100px, calc(100vw - 48px));
+          background: rgb(244, 83, 67); /* #F45343 */
+          color: rgb(255, 231, 216); /* #FFE7D8 */
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 18px;
-          padding: 44px 0;
         }
 
+        /* Match the mockup proportions at 1366x768 */
         .title {
           margin: 0;
+          padding-top: 76px; /* title top in mockup */
           font-family: "Moonscape", serif;
           font-weight: 400;
-          font-size: clamp(64px, 7vw, 140px);
+          font-size: 108px;
           line-height: 0.9;
           text-transform: uppercase;
           text-align: center;
         }
 
         .carousel {
-          width: min(860px, 92vw);
-          height: min(520px, 56vh);
-          border: 3px solid var(--bg-red); /* requested earlier */
-          border-radius: 2px;
-          overflow: hidden;
+          margin-top: 72px; /* gap title -> carousel */
+          width: 203px;
+          height: 266px;
+          border: 3px solid rgb(244, 83, 67);
+          background: transparent;
           position: relative;
-          background: transparent; /* no background */
+          overflow: hidden;
         }
 
         .carousel :global(img) {
@@ -107,29 +90,43 @@ export default function Home() {
         }
 
         .links {
+          margin-top: 112px; /* gap carousel -> links */
           display: flex;
+          flex-direction: column;
+          align-items: center;
           gap: 18px;
-          margin-top: 10px;
+          padding-bottom: 60px;
         }
 
-        .pill {
+        .link {
           font-family: "Orbit", monospace;
-          font-size: 11px;
+          font-size: 10px;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          padding: 10px 18px;
-          border: 1px solid rgba(255, 231, 216, 0.6);
-          background: rgba(0,0,0,0.08);
+          color: rgb(255, 231, 216);
+          text-decoration: underline;
+          text-underline-offset: 4px;
+          opacity: 0.7;
         }
 
-        .pill:hover {
-          background: rgba(0,0,0,0.16);
+        .link:hover {
+          opacity: 1;
         }
 
-        @media (max-width: 520px) {
-          .links { flex-direction: column; width: 100%; align-items: center; }
-          .pill { width: 100%; text-align: center; max-width: 360px; }
-          .carousel { height: 46vh; }
+        /* Responsive: keep the same composition ratio */
+        @media (max-width: 900px) {
+          .title {
+            font-size: clamp(56px, 10vw, 108px);
+            padding-top: 52px;
+          }
+          .carousel {
+            margin-top: 54px;
+            width: min(70vw, 260px);
+            height: min(90vw, 330px);
+          }
+          .links {
+            margin-top: 70px;
+          }
         }
       `}</style>
     </main>
