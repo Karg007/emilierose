@@ -72,12 +72,6 @@ export default function ArtPage() {
           margin: 0;
         }
 
-        .vline {
-          width: 1px;
-          height: 140px;
-          background: rgba(0, 0, 0, 0.6);
-          margin-top: 20px;
-        }
 
         .year {
           position: absolute;
