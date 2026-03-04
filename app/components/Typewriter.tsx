@@ -35,24 +35,26 @@ export default function Typewriter({ text, speed = 60 }: Props) {
       <span className={`cursor ${done ? "blink" : ""}`}>|</span>
 
       <style jsx>{`
-        .wrapper {
-          display: inline-block;
-        }
+  .wrapper {
+    display: inline-block;
+  }
 
-        .cursor {
-          display: inline-block;
-          margin-left: 5px; /* ← espace de 5px demandé */
-        }
+  .cursor {
+    display: inline-block;
+    margin-left: 5px;
+  }
 
-        .blink {
-          animation: blink 1s infinite;
-        }
+  .blink {
+    animation: blink 1.8s infinite; /* ← plus lent et plus élégant */
+  }
 
-        @keyframes blink {
-          0%, 50%, 100% { opacity: 1; }
-          25%, 75% { opacity: 0; }
-        }
-      `}</style>
+  @keyframes blink {
+    0%   { opacity: 1; }
+    40%  { opacity: 1; }
+    60%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+`}</style>
     </span>
   );
 }
