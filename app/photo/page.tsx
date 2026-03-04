@@ -13,23 +13,20 @@ export default function PhotoPage() {
   const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {
-    const id = window.setInterval(() => {
-      setIndex((p) => (p + 1) % images.length);
-    }, 3500);
+    const id = window.setInterval(() => setIndex((p) => (p + 1) % images.length), 3500);
     return () => window.clearInterval(id);
   }, [images.length]);
 
   return (
     <main className="page">
-      {/* LEFT COLUMN */}
       <section className="left">
         <header className="header">
           <h1 className="brand">
-            <Typewriter text="ÉMILIE ROSE" speed={45} />
+            <Typewriter text="ÉMILIE ROSE" durationMs={6000} />
           </h1>
         </header>
 
-        <div className="year">
+        <div className="year" aria-hidden="true">
           <div>2 0</div>
           <div>2 6</div>
         </div>
@@ -59,17 +56,9 @@ export default function PhotoPage() {
         </div>
       </section>
 
-      {/* RIGHT CAROUSEL */}
       <aside className="right" aria-label="Carrousel photo">
         {images.map((src, i) => (
-          <img
-            key={src}
-            src={src}
-            alt=""
-            decoding="async"
-            loading={i === 0 ? "eager" : "lazy"}
-            style={{ opacity: i === index ? 1 : 0 }}
-          />
+          <img key={src} src={src} alt="" style={{ opacity: i === index ? 1 : 0 }} />
         ))}
       </aside>
 
@@ -86,17 +75,12 @@ export default function PhotoPage() {
           padding: 80px 90px;
         }
 
-        .header {
-          display: flex;
-          align-items: flex-start;
-        }
-
         .brand {
+          margin: 0;
           font-family: "Moonscape", serif;
-          font-weight: 400;
+          font-weight: 200; /* thin */
           font-size: clamp(80px, 7vw, 150px);
           line-height: 0.9;
-          margin: 0;
           text-transform: uppercase;
           white-space: nowrap;
         }

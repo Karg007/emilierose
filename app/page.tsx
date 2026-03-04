@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <main className="page">
       <h1 className="title">
-        <Typewriter text="ÉMILIE ROSE" speed={45} />
+        <Typewriter text="ÉMILIE ROSE" durationMs={6000} />
       </h1>
 
       <div className="carousel" aria-label="Carrousel landing">
@@ -48,21 +48,21 @@ export default function Home() {
       </nav>
 
       <style jsx>{`
-       .page {
-  min-height: 100vh;
-  background: #f45343; /* couleur exacte demandée */
-  color: #ffe7d8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+        .page {
+          min-height: 100vh;
+          background: var(--bg-red);
+          color: var(--cream);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
-        /* Match the mockup proportions at 1366x768 */
+        /* Composition tuned for 1366x768 mockup */
         .title {
           margin: 0;
-          padding-top: 76px; /* title top in mockup */
+          padding-top: 76px;
           font-family: "Moonscape", serif;
-          font-weight: 400;
+          font-weight: 200; /* thin */
           font-size: 108px;
           line-height: 0.9;
           text-transform: uppercase;
@@ -70,14 +70,14 @@ export default function Home() {
         }
 
         .carousel {
-  margin-top: 72px;
-  width: 203px;
-  height: 266px;
-  border: 3px solid #b53a2d; /* ← couleur exacte demandée */
-  background: transparent;
-  position: relative;
-  overflow: hidden;
-}
+          margin-top: 72px;
+          width: 236px;   /* slightly bigger than 203 */
+          height: 310px;  /* slightly bigger than 266 */
+          border: 3px solid var(--frame);
+          background: transparent;
+          position: relative;
+          overflow: hidden;
+        }
 
         .carousel :global(img) {
           position: absolute;
@@ -90,7 +90,7 @@ export default function Home() {
         }
 
         .links {
-          margin-top: 112px; /* gap carousel -> links */
+          margin-top: 104px; /* adjusted after scaling carousel */
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -103,7 +103,7 @@ export default function Home() {
           font-size: 10px;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: rgb(255, 231, 216);
+          color: var(--cream);
           text-decoration: underline;
           text-underline-offset: 4px;
           opacity: 0.7;
@@ -113,7 +113,6 @@ export default function Home() {
           opacity: 1;
         }
 
-        /* Responsive: keep the same composition ratio */
         @media (max-width: 900px) {
           .title {
             font-size: clamp(56px, 10vw, 108px);
@@ -121,8 +120,8 @@ export default function Home() {
           }
           .carousel {
             margin-top: 54px;
-            width: min(70vw, 260px);
-            height: min(90vw, 330px);
+            width: min(76vw, 290px);
+            height: min(98vw, 380px);
           }
           .links {
             margin-top: 70px;
