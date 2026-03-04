@@ -1,9 +1,23 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Typewriter from "../components/Typewriter";
 
 export default function ArtPage() {
+  const images = useMemo(
+    () => Array.from({ length: 5 }, (_, i) => `/images/art/${String(i + 1).padStart(2, "0")}.jpg`),
+    []
+  );
+  const [index, setIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setIndex((p) => (p + 1) % images.length);
+    }, 3500);
+    return () => window.clearInterval(id);
+  }, [images.length]);
+
   return (
     <main className="page">
       <section className="left">
@@ -11,7 +25,6 @@ export default function ArtPage() {
           <h1 className="brand">
             <Typewriter text="ÉMILIE ROSE" speed={45} />
           </h1>
-          <div className="vline" />
         </header>
 
         <div className="year">
@@ -21,18 +34,17 @@ export default function ArtPage() {
 
         <div className="textBlock">
           <p>
-            ENCHANTÉE! MOI, C’EST ÉMILIE ROSE, ARTISTE CONTEMPORAINE
-            ET AMOUREUSE DE TOUTES LES BEAUTÉS BRUTES, NORDIQUES
-            ET POÉTIQUES.
+            ENCHANTÉE! MOI, C’EST ÉMILIE ROSE, ARTISTE CONTEMPORAINE ET AMOUREUSE DE TOUTES LES
+            BEAUTÉS BRUTES, NORDIQUES ET POÉTIQUES.
           </p>
 
           <p>
-            JE VOUS SOUHAITE LA BIENVENUE ICI, DANS MON PETIT COIN
-            CRÉATIF DU WEB. L’INTÉGRALITÉ DU SITE EST EN ROUTE MAIS EN
-            ATTENDANT, RENDEZ-VOUS DANS MA
-            <span className="highlight"> BOUTIQUE ETSY </span>
-            POUR Y DÉCOUVRIR MES CRÉATIONS.
+            JE VOUS SOUHAITE LA BIENVENUE ICI, DANS MON PETIT COIN CRÉATIF DU WEB. L’INTÉGRALITÉ DU
+            SITE EST EN ROUTE MAIS EN ATTENDANT, RENDEZ-VOUS DANS MA{" "}
+            <span className="highlight">BOUTIQUE ETSY</span> POUR Y DÉCOUVRIR MES CRÉATIONS.
           </p>
+
+          <p>À BIENTÔT! XX</p>
 
           <div className="signature">ÉMILIE ROSE XX</div>
 
@@ -42,8 +54,17 @@ export default function ArtPage() {
         </div>
       </section>
 
-      <aside className="right">
-        <img src="/images/art/01.jpg" alt="" />
+      <aside className="right" aria-label="Carrousel art">
+        {images.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            decoding="async"
+            loading={i === 0 ? "eager" : "lazy"}
+            style={{ opacity: i === index ? 1 : 0 }}
+          />
+        ))}
       </aside>
 
       <style jsx>{`
@@ -62,16 +83,17 @@ export default function ArtPage() {
         .header {
           display: flex;
           align-items: flex-start;
-          gap: 40px;
         }
 
         .brand {
           font-family: "Moonscape", serif;
+          font-weight: 400;
           font-size: clamp(80px, 7vw, 150px);
           line-height: 0.9;
           margin: 0;
+          text-transform: uppercase;
+          white-space: nowrap;
         }
-
 
         .year {
           position: absolute;
@@ -83,6 +105,7 @@ export default function ArtPage() {
           letter-spacing: 0.35em;
           opacity: 0.5;
           text-align: center;
+          user-select: none;
         }
 
         .textBlock {
@@ -96,12 +119,17 @@ export default function ArtPage() {
           line-height: 16px;
           letter-spacing: 0.06em;
           text-transform: uppercase;
-          color: rgba(0,0,0,0.6);
+          color: rgba(0, 0, 0, 0.6);
+        }
+
+        .textBlock p {
+          margin: 0 0 18px;
         }
 
         .highlight {
-          background: #f3f7ce;
+          background: var(--highlight);
           padding: 2px 4px;
+          color: rgba(0, 0, 0, 0.65);
         }
 
         .signature {
@@ -115,17 +143,49 @@ export default function ArtPage() {
           text-align: center;
           font-size: 10px;
           letter-spacing: 0.25em;
+          text-decoration: underline;
+          text-underline-offset: 2px;
+          opacity: 0.7;
         }
 
-        .right img {
+        .right {
+          position: relative;
+          overflow: hidden;
+          background: #f3f3f3;
+        }
+
+        .right :global(img) {
+          position: absolute;
+          inset: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
+          transition: opacity 0.8s ease;
+          display: block;
         }
 
         @media (max-width: 1000px) {
-          .page { grid-template-columns: 1fr; }
-          .right { height: 60vh; }
+          .page {
+            grid-template-columns: 1fr;
+          }
+          .right {
+            height: 60vh;
+          }
+          .left {
+            padding: 48px 22px 260px;
+          }
+          .year {
+            top: 220px;
+            left: 26px;
+            transform: none;
+            text-align: left;
+          }
+          .textBlock {
+            position: static;
+            transform: none;
+            width: min(340px, 100%);
+            margin-top: 26px;
+          }
         }
       `}</style>
     </main>
