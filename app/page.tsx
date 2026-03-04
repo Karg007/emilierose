@@ -70,14 +70,14 @@ export default function Home() {
         }
 
         .carousel {
-          margin-top: 72px; /* gap title -> carousel */
-          width: 203px;
-          height: 266px;
-          border: 3px solid rgb(244, 83, 67);
-          background: transparent;
-          position: relative;
-          overflow: hidden;
-        }
+  margin-top: 72px;
+  width: 203px;
+  height: 266px;
+  border: 3px solid #b53a2d; /* ← couleur exacte demandée */
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
 
         .carousel :global(img) {
           position: absolute;
