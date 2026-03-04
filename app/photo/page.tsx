@@ -1,124 +1,148 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Typewriter from "../components/Typewriter";
 
 export default function PhotoPage() {
-  const images = useMemo(
-    () =>
-      Array.from({ length: 15 }, (_, i) => `/images/photo/${String(i + 1).padStart(2, "0")}.jpg`),
-    []
-  );
-
-  const [index, setIndex] = useState<number>(0);
-
-  useEffect(() => {
-    const id = window.setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 3500);
-    return () => window.clearInterval(id);
-  }, [images.length]);
-
   return (
     <main className="page">
+      {/* LEFT COLUMN */}
       <section className="left">
-        <h1 className="title">
-          <Typewriter text="ÉMILIE ROSE" speed={45} />
-        </h1>
+        <header className="header">
+          <h1 className="brand">
+            <Typewriter text="ÉMILIE ROSE" speed={45} />
+          </h1>
+          <div className="vline" />
+        </header>
 
-        <p className="tagline">PHOTOGRAPHIE</p>
+        <div className="year">
+          <div>2 0</div>
+          <div>2 6</div>
+        </div>
 
-        <div className="back">
-          <Link href="/">&lt; RETOUR</Link>
+        <div className="textBlock">
+          <p>
+            ENCHANTÉE! MOI, C’EST ÉMILIE ROSE, PHOTOGRAPHE LIFESTYLE
+            POUR LES AMOUREUX DES SOUVENIRS CANDIDES, UNIQUES ET
+            CHALEUREUX.
+          </p>
+
+          <p>
+            JE VOUS SOUHAITE LA BIENVENUE ICI, DANS MON PETIT COIN
+            CRÉATIF DU WEB. L’INTÉGRALITÉ DU SITE EST EN ROUTE MAIS EN
+            ATTENDANT, ÉCRIVEZ-MOI AU
+            <span className="highlight"> INFO@EMILIEROSE.CA </span>
+            POUR RÉSERVER VOTRE MOMENT PHOTO.
+          </p>
+
+          <p>
+            MERCI À L’AVANCE DE ME CONFIER VOS PLUS BEAUX MOMENTS.
+            J’AI TRÈS HÂTE DE FAIRE VOTRE RENCONTRE.
+          </p>
+
+          <div className="signature">ÉMILIE ROSE XX</div>
+
+          <Link href="/" className="back">
+            &lt; RETOUR
+          </Link>
         </div>
       </section>
 
-      <aside className="carousel" aria-label="Carrousel photo">
-        {images.map((src, i) => (
-          <img
-            key={src}
-            src={src}
-            alt=""
-            decoding="async"
-            loading={i === 0 ? "eager" : "lazy"}
-            style={{ opacity: i === index ? 1 : 0 }}
-          />
-        ))}
+      {/* RIGHT IMAGE */}
+      <aside className="right">
+        <img src="/images/photo/01.jpg" alt="" />
       </aside>
 
       <style jsx>{`
         .page {
-          min-height: 100vh;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          background: var(--paper);
-          color: var(--ink);
+          min-height: 100vh;
+          background: #fff;
         }
 
         .left {
-          padding: 72px 70px;
+          position: relative;
+          padding: 80px 90px;
         }
 
-        .title {
-          margin: 0;
+        .header {
+          display: flex;
+          align-items: flex-start;
+          gap: 40px;
+        }
+
+        .brand {
           font-family: "Moonscape", serif;
-          font-weight: 400;
-          font-size: clamp(60px, 6vw, 130px);
+          font-size: clamp(80px, 7vw, 150px);
           line-height: 0.9;
-          text-transform: uppercase;
+          margin: 0;
         }
 
-        .tagline {
-          margin: 34px 0 0;
+        .vline {
+          width: 1px;
+          height: 140px;
+          background: rgba(0, 0, 0, 0.6);
+          margin-top: 20px;
+        }
+
+        .year {
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           font-family: "Orbit", monospace;
-          font-size: 11px;
+          font-size: 10px;
           letter-spacing: 0.35em;
+          opacity: 0.5;
+          text-align: center;
+        }
+
+        .textBlock {
+          position: absolute;
+          bottom: 90px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 320px;
+          font-family: "Orbit", monospace;
+          font-size: 10px;
+          line-height: 16px;
+          letter-spacing: 0.06em;
           text-transform: uppercase;
-          opacity: 0.55;
+          color: rgba(0,0,0,0.6);
+        }
+
+        .textBlock p {
+          margin-bottom: 18px;
+        }
+
+        .highlight {
+          background: #f3f7ce;
+          padding: 2px 4px;
+        }
+
+        .signature {
+          margin-top: 30px;
+          text-align: center;
         }
 
         .back {
-          margin-top: 34px;
-          font-family: "Orbit", monospace;
-          font-size: 11px;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          opacity: 0.6;
-        }
-        .back :global(a) {
-          text-decoration: underline;
-          text-underline-offset: 2px;
+          display: block;
+          margin-top: 25px;
+          text-align: center;
+          font-size: 10px;
+          letter-spacing: 0.25em;
         }
 
-        .carousel {
-          position: relative;
-          overflow: hidden;
-          min-height: 100vh;
-          background: #f3f3f3;
-        }
-
-        .carousel :global(img) {
-          position: absolute;
-          inset: 0;
+        .right img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: opacity 0.8s ease;
-          display: block;
         }
 
-        @media (max-width: 980px) {
-          .page {
-            grid-template-columns: 1fr;
-          }
-          .carousel {
-            height: 60vh;
-            min-height: 60vh;
-          }
-          .left {
-            padding: 48px 22px;
-          }
+        @media (max-width: 1000px) {
+          .page { grid-template-columns: 1fr; }
+          .right { height: 60vh; }
         }
       `}</style>
     </main>
