@@ -48,14 +48,14 @@ export default function Home() {
       </nav>
 
       <style jsx>{`
-        .page {
-          min-height: 100vh;
-          background: rgb(244, 83, 67); /* #F45343 */
-          color: rgb(255, 231, 216); /* #FFE7D8 */
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+       .page {
+  min-height: 100vh;
+  background: #f45343; /* couleur exacte demandée */
+  color: #ffe7d8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
         /* Match the mockup proportions at 1366x768 */
         .title {
