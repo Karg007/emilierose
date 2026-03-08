@@ -103,7 +103,7 @@ export default function PhotoPage() {
           transform: translateX(-50%);
           width: 320px;
           font-family: "Orbit", monospace;
-          font-size: 10px;
+          font-size: 13px;
           line-height: 16px;
           letter-spacing: 0.06em;
           text-transform: uppercase;
