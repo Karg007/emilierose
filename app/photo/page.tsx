@@ -138,8 +138,8 @@ export default function PhotoPage() {
 
         .right :global(img) {
           position: absolute;
-          inset: 0;
-          width: 100%;
+          right: 0;
+          width: auto;
           height: 100vh;
           object-position: right;
           transition: opacity 0.8s ease;
