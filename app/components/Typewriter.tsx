@@ -7,7 +7,7 @@ type TypewriterProps = {
   durationMs?: number;
 };
 
-export default function Typewriter({ text, durationMs = 3000 }: TypewriterProps) {
+export default function Typewriter({ text, durationMs = 2000 }: TypewriterProps) {
   const stepMs = useMemo(() => {
     const len = Math.max(1, text.length);
     return Math.max(20, Math.round(durationMs / len));
