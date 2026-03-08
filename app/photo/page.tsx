@@ -138,16 +138,15 @@ export default function PhotoPage() {
         .right {
           position: relative;
           overflow: hidden;
-          background: #f3f3f3;
         }
 
         .right :global(img) {
           position: absolute;
           inset: 0;
           width: 100%;
-          height: 100%;
+          height: auto;
           object-fit: contain;
-          object-position: center;
+          object-position: right;
           transition: opacity 0.8s ease;
           display: block;
         }
