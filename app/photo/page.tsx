@@ -91,10 +91,10 @@ export default function PhotoPage() {
         .textBlock {
           position: absolute;
           bottom: 90px;
-          left: 62%;
+          left: 70%;
           transform: translateX(-50%);
           text-align: justify;
-          width: 320px;
+          width: 250px;
           font-family: "Orbit", monospace;
           font-size: 13px;
           line-height: 16px;
