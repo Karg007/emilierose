@@ -49,7 +49,7 @@ export default function Home() {
           padding-top: 76px;
           font-family: "Moonscape", serif;
           font-weight: 200;
-          font-size: 108px;
+          font-size: 150px;
           line-height: 0.9;
           text-transform: uppercase;
           text-align: center;
@@ -57,9 +57,9 @@ export default function Home() {
 
         .carousel {
           margin-top: 5%;
-          width: 400px;
-          height: 525px;
-          border: 3px solid #b53a2d;
+          width: 350px;
+          height: 500px;
+          border: 6px solid #b53a2d;
           background: transparent;
           position: relative;
           overflow: hidden;
