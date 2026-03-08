@@ -56,7 +56,7 @@ export default function Home() {
         }
 
         .carousel {
-          margin-top: 60px;
+          margin-top: 5%;
           width: 400px;
           height: 525px;
           border: 3px solid #b53a2d;
@@ -76,7 +76,7 @@ export default function Home() {
         }
 
         .links {
-          margin-top: 70px;
+          margin-top: 8%;
           display: flex;
           flex-direction: column;
           align-items: center;
