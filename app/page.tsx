@@ -70,7 +70,6 @@ export default function Home() {
           inset: 0;
           width: 100%;
           height: 100%;
-          object-fit: contain;
           object-position: center;
           transition: opacity 0.8s ease;
           display: block;
