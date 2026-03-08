@@ -127,7 +127,7 @@ export default function PhotoPage() {
 
         .back {
           display: block;
-          margin-top: 35px;
+          margin-top: 45px;
           text-align: center;
           font-size: 10px;
           letter-spacing: 0.25em;
