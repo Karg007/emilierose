@@ -46,10 +46,10 @@ export default function Home() {
 
         .title {
           margin: 0;
-          padding-top: 76px;
+          padding-top: 130px;
           font-family: "Moonscape", serif;
           font-weight: 200;
-          font-size: 150px;
+          font-size: 160px;
           line-height: 0.9;
           text-transform: uppercase;
           text-align: center;
@@ -58,7 +58,7 @@ export default function Home() {
         .carousel {
           margin-top: 5%;
           width: 350px;
-          height: 500px;
+          height: 447px;
           border: 6px solid #b53a2d;
           background: transparent;
           position: relative;
@@ -76,11 +76,11 @@ export default function Home() {
         }
 
         .links {
-          margin-top: 8%;
+          margin-top: 6%;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 18px;
+          gap: 40px;
           padding-bottom: 60px;
         }
 
