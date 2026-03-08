@@ -37,7 +37,7 @@ export default function ArtPage() {
           <p>
             JE VOUS SOUHAITE LA BIENVENUE ICI, DANS MON PETIT COIN CRÉATIF DU WEB. L’INTÉGRALITÉ DU
             SITE EST EN ROUTE MAIS EN ATTENDANT, RENDEZ-VOUS DANS MA{" "}
-            <span className="highlight">BOUTIQUE ETSY</span> POUR Y DÉCOUVRIR MES CRÉATIONS.
+            <a href="https://www.etsy.com/shop/emilieroseartiste" target="_blank" rel="noopener noreferrer" className="highlight"> BOUTIQUE ETSY</a> POUR Y DÉCOUVRIR MES CRÉATIONS.
           </p>
 
           <p>À BIENTÔT! XX</p>
