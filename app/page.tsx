@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className="page">
       <h1 className="title">
-        <Typewriter text="ÉMILIE ROSE" durationMs={2000} />
+        <Typewriter text="ÉMILIE ROSE" durationMs={1500} />
       </h1>
 
       <div className="carousel" aria-label="Carrousel landing">
