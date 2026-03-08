@@ -47,7 +47,7 @@ export default function Typewriter({ text, durationMs = 3000 }: TypewriterProps)
 
         .cursor {
           width: 1px;
-          height: calc(1.15em + 10px);
+          height: calc(1.15em + 15px);
           margin-left: 50px;
           background: currentColor;
           transform: translateY(0.02em);
