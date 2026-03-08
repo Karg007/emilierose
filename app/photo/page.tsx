@@ -77,7 +77,7 @@ export default function PhotoPage() {
 
         .year {
           position: absolute;
-          top: 51%;
+          top: 55%;
           left: 53%;
           transform: translate(-50%, -50%);
           font-family: "Orbit", monospace;
