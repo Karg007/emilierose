@@ -31,11 +31,7 @@ export default function PhotoPage() {
         <div className="textBlock">
           <p>
             ENCHANTÉE! MOI, C’EST ÉMILIE ROSE, PHOTOGRAPHE LIFESTYLE POUR LES AMOUREUX DES SOUVENIRS
-            CANDIDES, UNIQUES ET CHALEUREUX.
-          </p>
-
-          <p>
-            JE VOUS SOUHAITE LA BIENVENUE ICI, DANS MON PETIT COIN CRÉATIF DU WEB. L’INTÉGRALITÉ DU
+            CANDIDES, UNIQUES ET CHALEUREUX. JE VOUS SOUHAITE LA BIENVENUE ICI, DANS MON PETIT COIN CRÉATIF DU WEB. L’INTÉGRALITÉ DU
             SITE EST EN ROUTE MAIS EN ATTENDANT, ÉCRIVEZ-MOI AU{" "}
             <a href="mailto:info@emilierose.ca" className="highlight">INFO@EMILIEROSE.CA</a> POUR RÉSERVER VOTRE MOMENT PHOTO.
           </p>
@@ -85,8 +81,8 @@ export default function PhotoPage() {
 
         .year {
           position: absolute;
-          top: 45%;
-          left: 50%;
+          top: 51%;
+          left: 53%;
           transform: translate(-50%, -50%);
           font-family: "Orbit", monospace;
           font-size: 15px;
@@ -101,6 +97,7 @@ export default function PhotoPage() {
           bottom: 90px;
           left: 62%;
           transform: translateX(-50%);
+          text-align: justify;
           width: 320px;
           font-family: "Orbit", monospace;
           font-size: 13px;
