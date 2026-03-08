@@ -12,7 +12,7 @@ export default function ArtPage() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setIndex((p) => (p + 1) % images.length), 3500);
+    const id = setInterval(() => setIndex((p) => (p + 1) % images.length), 3000);
     return () => clearInterval(id);
   }, [images.length]);
 
