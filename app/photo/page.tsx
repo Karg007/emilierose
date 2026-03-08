@@ -109,7 +109,7 @@ export default function PhotoPage() {
 
         .highlight {
           background: var(--highlight);
-          padding: 2px 4px;
+          padding: 0px;
           color: rgba(0, 0, 0, 0.65);
           text-decoration:underline;
         }
