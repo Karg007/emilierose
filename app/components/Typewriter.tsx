@@ -42,12 +42,13 @@ export default function Typewriter({ text, durationMs = 4000 }: TypewriterProps)
         .tw {
           display: inline-flex;
           align-items: center;
+          margin-left:50px;
         }
 
         .cursor {
           width: 1px;
           height: calc(1.15em + 10px);
-          margin-left: 20px;
+          margin-left: 50px;
           background: currentColor;
           transform: translateY(0.02em);
           opacity: ${done ? 1 : 0};
