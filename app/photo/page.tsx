@@ -20,7 +20,7 @@ export default function PhotoPage() {
     <main className="page">
       <section className="left">
         <h1 className="brand">
-          <Typewriter text="ÉMILIE ROSE" durationMs={3000} />
+          <Typewriter text="ÉMILIE ROSE" durationMs={2000} />
         </h1>
 
         <div className="year" aria-hidden="true">
