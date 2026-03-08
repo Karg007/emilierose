@@ -87,7 +87,7 @@ export default function ArtPage() {
           transform: translate(-50%, -50%);
           font-family: "Orbit", monospace;
           font-size: 15px;
-          letter-spacing: 0.35em;
+          letter-spacing: 0;
           opacity: 0.5;
           text-align: center;
           user-select: none;
