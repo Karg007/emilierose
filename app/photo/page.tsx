@@ -42,10 +42,6 @@ export default function PhotoPage() {
           </p>
 
           <div className="signature">ÉMILIE ROSE XX</div>
-
-          <Link href="/" className="back">
-            &lt; RETOUR
-          </Link>
         </div>
       </section>
 
@@ -120,7 +116,7 @@ export default function PhotoPage() {
 
         .signature {
           margin-top: 30px;
-          text-align: center;
+          text-align: right;
           margin-bottom:25px;
         }
 
