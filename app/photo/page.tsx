@@ -147,8 +147,7 @@ export default function PhotoPage() {
           position: absolute;
           inset: 0;
           width: 100%;
-          height: auto;
-          object-fit: contain;
+          height: 100vh;
           object-position: right;
           transition: opacity 0.8s ease;
           display: block;
