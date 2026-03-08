@@ -99,7 +99,7 @@ export default function ArtPage() {
           transform: translateX(-50%);
           width: 320px;
           font-family: "Orbit", monospace;
-          font-size: 12px;
+          font-size: 13px;
           line-height: 16px;
           letter-spacing: 0.06em;
           text-transform: uppercase;
