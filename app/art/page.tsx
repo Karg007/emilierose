@@ -142,7 +142,7 @@ export default function ArtPage() {
           position: absolute;
           inset: 0;
           width: 100%;
-          height: auto;
+          height: 100vh;
           object-fit: contain;
           object-position: right;
           transition: opacity 0.8s ease;
