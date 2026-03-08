@@ -20,7 +20,7 @@ export default function ArtPage() {
     <main className="page">
       <section className="left">
         <h1 className="brand">
-          <Typewriter text="ÉMILIE ROSE" durationMs={4000} />
+          <Typewriter text="ÉMILIE ROSE" durationMs={1000} />
         </h1>
 
         <div className="year" aria-hidden="true">
