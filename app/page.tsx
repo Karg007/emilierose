@@ -97,6 +97,7 @@ export default function Home() {
 
         .link:hover {
           opacity: 1;
+          tex-decoration:underline;
         }
 
         @media (max-width: 900px) {
