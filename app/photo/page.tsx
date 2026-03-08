@@ -77,7 +77,7 @@ export default function PhotoPage() {
           margin: 0;
           font-family: "Moonscape", serif;
           font-weight: 200;
-          font-size: clamp(80px, 7vw, 1000px);
+          font-size: clamp(80px, 10vw, 1000px);
           line-height: 0.9;
           text-transform: uppercase;
           white-space: nowrap;
@@ -89,7 +89,7 @@ export default function PhotoPage() {
           left: 50%;
           transform: translate(-50%, -50%);
           font-family: "Orbit", monospace;
-          font-size: 10px;
+          font-size: 15px;
           letter-spacing: 0.35em;
           opacity: 0.5;
           text-align: center;
@@ -127,7 +127,7 @@ export default function PhotoPage() {
 
         .back {
           display: block;
-          margin-top: 25px;
+          margin-top: 35px;
           text-align: center;
           font-size: 10px;
           letter-spacing: 0.25em;
