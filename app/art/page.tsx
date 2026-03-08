@@ -73,7 +73,7 @@ export default function ArtPage() {
           margin: 0;
           font-family: "Moonscape", serif;
           font-weight: 200;
-          font-size: clamp(80px, 7vw, 150px);
+          font-size: clamp(80px, 10vw, 1000px);
           line-height: 0.9;
           text-transform: uppercase;
           white-space: nowrap;
@@ -85,7 +85,7 @@ export default function ArtPage() {
           left: 50%;
           transform: translate(-50%, -50%);
           font-family: "Orbit", monospace;
-          font-size: 10px;
+          font-size: 15px;
           letter-spacing: 0.35em;
           opacity: 0.5;
           text-align: center;
@@ -99,7 +99,7 @@ export default function ArtPage() {
           transform: translateX(-50%);
           width: 320px;
           font-family: "Orbit", monospace;
-          font-size: 10px;
+          font-size: 12px;
           line-height: 16px;
           letter-spacing: 0.06em;
           text-transform: uppercase;
@@ -142,9 +142,9 @@ export default function ArtPage() {
           position: absolute;
           inset: 0;
           width: 100%;
-          height: 100%;
+          height: auto;
           object-fit: contain;
-          object-position: center;
+          object-position: right;
           transition: opacity 0.8s ease;
           display: block;
         }
