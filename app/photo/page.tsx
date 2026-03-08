@@ -67,6 +67,7 @@ export default function PhotoPage() {
           background: #fff;
         }
 
+
         .left {
           position: relative;
           padding: 80px 90px;
@@ -76,7 +77,7 @@ export default function PhotoPage() {
           margin: 0;
           font-family: "Moonscape", serif;
           font-weight: 200;
-          font-size: clamp(80px, 7vw, 150px);
+          font-size: clamp(80px, 7vw, 1000px);
           line-height: 0.9;
           text-transform: uppercase;
           white-space: nowrap;
