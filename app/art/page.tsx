@@ -95,7 +95,7 @@ export default function ArtPage() {
         .textBlock {
           position: absolute;
           bottom: 90px;
-          left: 50%;
+          left: 62%;
           transform: translateX(-50%);
           width: 320px;
           font-family: "Orbit", monospace;
