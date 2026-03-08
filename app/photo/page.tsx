@@ -123,11 +123,12 @@ export default function PhotoPage() {
         .signature {
           margin-top: 30px;
           text-align: center;
+          margin-bottom:25px;
         }
 
         .back {
           display: block;
-          margin-top: 45px;
+          margin-top: 25px;
           text-align: center;
           font-size: 10px;
           letter-spacing: 0.25em;
