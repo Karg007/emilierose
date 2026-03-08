@@ -82,6 +82,7 @@ export default function PhotoPage() {
           transform: translate(-50%, -50%);
           font-family: "Orbit", monospace;
           font-size: 15px;
+          color:#000000;
           letter-spacing: 0;
           opacity: 0.5;
           text-align: center;
@@ -100,7 +101,7 @@ export default function PhotoPage() {
           line-height: 16px;
           letter-spacing: 0.06em;
           text-transform: uppercase;
-          color: rgba(0, 0, 0, 0.6);
+          color: #000000;
         }
 
         .textBlock p {
@@ -110,7 +111,7 @@ export default function PhotoPage() {
         .highlight {
           background: var(--highlight);
           padding: 0px;
-          color: rgba(0, 0, 0, 0.65);
+          color: #000000;
           text-decoration:underline;
         }
 
