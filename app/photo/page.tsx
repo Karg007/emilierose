@@ -12,7 +12,7 @@ export default function PhotoPage() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setIndex((p) => (p + 1) % images.length), 3500);
+    const id = setInterval(() => setIndex((p) => (p + 1) % images.length), 3000);
     return () => clearInterval(id);
   }, [images.length]);
 
@@ -20,7 +20,7 @@ export default function PhotoPage() {
     <main className="page">
       <section className="left">
         <h1 className="brand">
-          <Typewriter text="ÉMILIE ROSE" durationMs={4000} />
+          <Typewriter text="ÉMILIE ROSE" durationMs={3000} />
         </h1>
 
         <div className="year" aria-hidden="true">
