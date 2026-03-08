@@ -9,7 +9,7 @@ export default function Home() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setIndex((p) => (p + 1) % images.length), 3000);
+    const id = setInterval(() => setIndex((p) => (p + 1) % images.length), 2000);
     return () => clearInterval(id);
   }, [images.length]);
 
