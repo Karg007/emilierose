@@ -37,7 +37,7 @@ export default function PhotoPage() {
           <p>
             JE VOUS SOUHAITE LA BIENVENUE ICI, DANS MON PETIT COIN CRÉATIF DU WEB. L’INTÉGRALITÉ DU
             SITE EST EN ROUTE MAIS EN ATTENDANT, ÉCRIVEZ-MOI AU{" "}
-            <span className="highlight">INFO@EMILIEROSE.CA</span> POUR RÉSERVER VOTRE MOMENT PHOTO.
+            <a href="mailto:info@emilierose.ca" className="highlight">INFO@EMILIEROSE.CA</a> POUR RÉSERVER VOTRE MOMENT PHOTO.
           </p>
 
           <p>
@@ -118,6 +118,7 @@ export default function PhotoPage() {
           background: var(--highlight);
           padding: 2px 4px;
           color: rgba(0, 0, 0, 0.65);
+          text-decoration:none;
         }
 
         .signature {
