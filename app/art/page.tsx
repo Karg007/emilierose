@@ -57,12 +57,13 @@ export default function ArtPage() {
       </aside>
 
       <style jsx>{`
-        .page {
+       .page {
           display: grid;
           grid-template-columns: 1fr 1fr;
           min-height: 100vh;
           background: #fff;
         }
+
 
         .left {
           position: relative;
@@ -81,8 +82,8 @@ export default function ArtPage() {
 
         .year {
           position: absolute;
-          top: 45%;
-          left: 50%;
+          top: 55%;
+          left: 53%;
           transform: translate(-50%, -50%);
           font-family: "Orbit", monospace;
           font-size: 15px;
@@ -95,9 +96,10 @@ export default function ArtPage() {
         .textBlock {
           position: absolute;
           bottom: 90px;
-          left: 62%;
+          left: 70%;
           transform: translateX(-50%);
-          width: 320px;
+          text-align: justify;
+          width: 250px;
           font-family: "Orbit", monospace;
           font-size: 13px;
           line-height: 16px;
@@ -114,11 +116,13 @@ export default function ArtPage() {
           background: var(--highlight);
           padding: 2px 4px;
           color: rgba(0, 0, 0, 0.65);
+          text-decoration:underline;
         }
 
         .signature {
           margin-top: 30px;
-          text-align: center;
+          text-align: right;
+          margin-bottom:25px;
         }
 
         .back {
@@ -135,15 +139,13 @@ export default function ArtPage() {
         .right {
           position: relative;
           overflow: hidden;
-          background: #f3f3f3;
         }
 
         .right :global(img) {
           position: absolute;
-          inset: 0;
-          width: 100%;
+          right: 0;
+          width: auto;
           height: 100vh;
-          object-fit: contain;
           object-position: right;
           transition: opacity 0.8s ease;
           display: block;
