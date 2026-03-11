@@ -112,6 +112,50 @@ export default function Home() {
             font-size: 11px;
           }
         }
+        @media (max-width: 768px) {
+  .page {
+    padding: 0 18px 28px;
+  }
+
+  .title {
+    padding-top: 40px;
+    font-size: clamp(44px, 14vw, 72px);
+    line-height: 0.92;
+    text-align: center;
+  }
+
+  .carousel {
+    margin-top: 32px;
+    border-width: 4px;
+  }
+
+  .links {
+    margin-top: 36px;
+    gap: 16px;
+    padding-bottom: 24px;
+  }
+
+  .link {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+  }
+}
+
+@media (max-width: 420px) {
+  .title {
+    font-size: 42px;
+  }
+
+  .carousel {
+    width: 84vw;
+    height: 108vw;
+  }
+
+  .link {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+  }
+}
        
       `}</style>
     </main>
