@@ -105,6 +105,9 @@ export default function Home() {
             width: min(86vw, 275px);
             height: min(112vw, 351px);
           }
+          .title {
+            margin-top:4%;
+          }
         }
         @media (max-width: 900px) {
           .title {
