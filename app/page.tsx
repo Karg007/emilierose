@@ -46,10 +46,10 @@ export default function Home() {
 
         .title {
           margin: 0;
-          padding-top: 130px;
+          padding-top: 4%;
           font-family: "Moonscape", serif;
           font-weight: 200;
-          font-size: 160px;
+          font-size: 900%;
           line-height: 0.9;
           text-transform: uppercase;
           text-align: center;
