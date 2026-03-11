@@ -90,18 +90,19 @@ export default function Home() {
          
         }
 
-        .link {
-          text-decoration: underline;
-          text-underline-offset: 4px;
-          opacity: 0.7;
-        
-        }
+       .links :global(a) {
+  text-decoration: none;
+  text-underline-offset: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+}
 
-        .link:hover a{
-          opacity: 1;
-          text-decoration:underline;
-        }
-
+.links :global(a:hover) {
+  opacity: 1;
+  text-decoration: underline;
+}
         @media (max-height: 1080px) {
           .carousel {
             margin-top: 4%;
