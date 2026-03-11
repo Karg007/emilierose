@@ -102,12 +102,12 @@ export default function Home() {
 
         @media (max-width: 1080px) {
           .carousel {
-            margin-top:4%;
+            margin-top: 4%;
             width: min(86vw, 275px);
             height: min(112vw, 351px);
           }
           .links {
-            margin-top:4%;
+            margin-top: 4%;
           }
         }
        
