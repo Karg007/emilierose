@@ -117,7 +117,6 @@ export default function PhotoPage() {
         .signature {
           margin-top: 30px;
           text-align: right;
-          margin-bottom:25px;
         }
 
         .back {
