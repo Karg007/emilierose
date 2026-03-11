@@ -145,33 +145,37 @@ export default function PhotoPage() {
           display: block;
         }
 
-        @media (max-width: 1000px) {
+       @media (max-width: 900px) {
   .page {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   .left {
     position: static;
     padding: 36px 20px 28px;
-    min-height: auto;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .brand {
     font-size: clamp(44px, 14vw, 72px);
     line-height: 0.92;
     white-space: normal;
+    margin: 0;
   }
 
   .year {
     position: static;
     transform: none;
     margin-top: 28px;
-    align-self: flex-start;
-    text-align: left;
     font-size: 10px;
+    line-height: 16px;
     letter-spacing: 0.28em;
+    text-align: left;
+    opacity: 0.5;
   }
 
   .textBlock {
@@ -179,30 +183,43 @@ export default function PhotoPage() {
     transform: none;
     width: 100%;
     max-width: 340px;
-    margin-top: 32px;
+    margin-top: 28px;
     font-size: 10px;
     line-height: 15px;
     letter-spacing: 0.04em;
+    padding: 0;
+  }
+
+  .textBlock p {
+    margin: 0 0 14px;
   }
 
   .signature {
-    margin-top: 22px;
-    text-align: left;
-  }
-
-  .back {
     margin-top: 20px;
     text-align: left;
   }
 
+  .back {
+    display: inline-block;
+    margin-top: 18px;
+    text-align: left;
+  }
+
   .right {
-    height: 56vh;
-    min-height: 360px;
+    position: relative;
+    width: 100%;
+    height: 58vh;
+    min-height: 340px;
+    overflow: hidden;
   }
 
   .right :global(img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    padding: 14px;
+    object-position: center;
     background: #f3f3f3;
   }
 }
