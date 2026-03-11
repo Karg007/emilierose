@@ -100,7 +100,7 @@ export default function Home() {
           text-decoration:underline;
         }
 
-        @media (max-width: 1080px) {
+        @media (max-height: 1080px) {
           .carousel {
             margin-top: 4%;
             width: min(86vw, 275px);
