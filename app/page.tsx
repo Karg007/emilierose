@@ -80,7 +80,7 @@ export default function Home() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 40px;
+          gap: 25px;
           padding-bottom: 1%;
           font-family: "Orbit", monospace;
           font-size: 11px;
