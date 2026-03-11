@@ -82,7 +82,7 @@ export default function PhotoPage() {
   font-family: "Orbit", monospace;
   font-size: 10px;
   letter-spacing: 0.35em;
-  opacity: 0.5;
+color:#000000
   text-align: center;
   user-select: none;
   align-self: center;
@@ -98,7 +98,7 @@ export default function PhotoPage() {
   line-height: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.6);
+  color: #000000;
   padding-bottom: 90px;
   text-align:justify;
 }
