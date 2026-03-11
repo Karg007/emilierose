@@ -60,11 +60,12 @@ export default function PhotoPage() {
         }
 
 
-        .left {
-          position: relative;
-          padding: 80px 90px;
-        }
-
+       .left {
+  padding: 80px 90px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
         .brand {
           margin: 0;
           font-family: "Moonscape", serif;
@@ -75,34 +76,29 @@ export default function PhotoPage() {
           white-space: nowrap;
         }
 
-        .year {
-          position: absolute;
-          top: 55%;
-          left: 53%;
-          transform: translate(-50%, -50%);
-          font-family: "Orbit", monospace;
-          font-size: 15px;
-          color:#000000;
-          letter-spacing: 0;
-          opacity: 0.5;
-          text-align: center;
-          user-select: none;
-        }
+       .year {
+  margin-top: 110px;
+  font-family: "Orbit", monospace;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  opacity: 0.5;
+  text-align: center;
+  user-select: none;
+  align-self: center;
+}
 
-        .textBlock {
-          position: absolute;
-          bottom: 90px;
-          left: 70%;
-          transform: translateX(-50%);
-          text-align: justify;
-          width: 250px;
-          font-family: "Orbit", monospace;
-          font-size: 13px;
-          line-height: 16px;
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-          color: #000000;
-        }
+       .textBlock {
+  margin-top: auto;
+  align-self: center;
+  width: 320px;
+  font-family: "Orbit", monospace;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+  padding-bottom: 90px;
+}
 
         .textBlock p {
           margin: 0 0 18px;
