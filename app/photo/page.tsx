@@ -61,7 +61,7 @@ export default function PhotoPage() {
 
 
        .left {
-  padding: 80px 90px;
+  padding: 70px 90px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -77,7 +77,7 @@ export default function PhotoPage() {
         }
 
        .year {
-  margin-top: 20%;
+  margin-top: 18%;
   margin-left: 18%;
   font-family: "Orbit", monospace;
   font-size: 10px;
