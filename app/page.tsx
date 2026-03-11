@@ -47,7 +47,7 @@ export default function Home() {
         .title {
           margin: 0;
           padding-top: 4%;
-          font-family: "Moonscape", serif;
+          font-family: var(--font-moonscape), serif;
           font-weight: 200;
           font-size: 800%;
           line-height: 0.9;
@@ -82,7 +82,7 @@ export default function Home() {
           align-items: center;
           gap: 25px;
           padding-bottom: 1%;
-          font-family: "Orbit", monospace;
+          font-family: var(--font-orbit), monospace;
           font-size: 14px;
           letter-spacing: 3px;
           text-transform: uppercase;
