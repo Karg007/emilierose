@@ -84,7 +84,7 @@ export default function Home() {
           padding-bottom: 1%;
         }
 
-        .link {
+        .link a{
           font-family: "Orbit", monospace;
           font-size: 9px;
           letter-spacing: 5px;
