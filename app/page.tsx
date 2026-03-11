@@ -86,8 +86,8 @@ export default function Home() {
 
         .link {
           font-family: "Orbit", monospace;
-          font-size: 10px;
-          letter-spacing: 0.28em;
+          font-size: 9px;
+          letter-spacing: 5px;
           text-transform: uppercase;
           color: #ffe7d8;
           text-decoration: underline;
