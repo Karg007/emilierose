@@ -82,18 +82,14 @@ export default function Home() {
           align-items: center;
           gap: 40px;
           padding-bottom: 1%;
-        }
-
-        .link a{
           font-family: "Orbit", monospace;
-          font-size: 9px;
-          letter-spacing: 5px;
+          font-size: 10px;
+          letter-spacing: 2px;
           text-transform: uppercase;
           color: #ffe7d8;
-          text-decoration: underline;
-          text-underline-offset: 4px;
-          opacity: 0.7;
         }
+
+
 
         .link:hover {
           opacity: 1;
