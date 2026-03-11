@@ -71,7 +71,7 @@ export default function Home() {
           width: 100%;
           height: 100%;
           object-position: center;
-          transition: opacity 0.8s ease;
+          transition: opacity 0.2s ease;
           display: block;
         }
 
