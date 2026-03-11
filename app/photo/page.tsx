@@ -77,7 +77,8 @@ export default function PhotoPage() {
         }
 
        .year {
-  margin-top: 110px;
+  margin-top: 20%;
+  margin-left: 18%;
   font-family: "Orbit", monospace;
   font-size: 10px;
   letter-spacing: 0.35em;
@@ -89,8 +90,9 @@ export default function PhotoPage() {
 
        .textBlock {
   margin-top: auto;
+  margin-left: 70%;
   align-self: center;
-  width: 320px;
+  width: 200px;
   font-family: "Orbit", monospace;
   font-size: 10px;
   line-height: 16px;
@@ -98,6 +100,7 @@ export default function PhotoPage() {
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.6);
   padding-bottom: 90px;
+  text-align:justify;
 }
 
         .textBlock p {
