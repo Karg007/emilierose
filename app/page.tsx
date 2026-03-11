@@ -81,7 +81,7 @@ export default function Home() {
           flex-direction: column;
           align-items: center;
           gap: 40px;
-          padding-bottom: 60px;
+          padding-bottom: 1%;
         }
 
         .link {
@@ -100,6 +100,12 @@ export default function Home() {
           text-decoration:underline;
         }
 
+        @media (max-width: 1600px) {
+          .carousel {
+            width: min(86vw, 300px);
+            height: min(112vw, 383px);
+          }
+        }
         @media (max-width: 900px) {
           .title {
             font-size: clamp(56px, 10vw, 108px);
@@ -107,8 +113,8 @@ export default function Home() {
           }
           .carousel {
             margin-top: 44px;
-            width: min(86vw, 420px);
-            height: min(112vw, 560px);
+            width: min(86vw, 300px);
+            height: min(112vw, 383px);
           }
           .links {
             margin-top: 54px;
