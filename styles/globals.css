@@ -1,65 +1,32 @@
-:root{
-  --bg-red:#f45343;
-  --frame:#b53a2d;
-  --cream:#ffe7d8;
-  --highlight:#f3f7ce;
-  --ink:#000;
-  --paper:#fff;
+:root {
+  --bg-red: #f45343;
+  --frame: #b53a2d;
+  --cream: #ffe7d8;
+  --highlight: #f3f7ce;
+  --ink: #000;
+  --paper: #fff;
 }
 
-html, body {
-  height: 100%;
+html,
+body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-body{
-  font-family: "Orbit", monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body {
+  font-family: var(--font-orbit), monospace;
   background: var(--paper);
   color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-a { color: inherit; text-decoration: none; }
-a:hover { color: inherit; text-decoration: underline; }
-
-
-/* Fonts (files must be in public/fonts/) */
-@font-face{
-  font-family:"Moonscape";
-  src:url("/fonts/Moonscape Thin TTF.ttf") format("truetype");
-  font-weight:200;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Moonscape";
-  src:url("/fonts/Moonscape Regular.ttf") format("truetype");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Moonscape";
-  src:url("/fonts/Moonscape Bold TTF.ttf") format("truetype");
-  font-weight:700;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Moonscape";
-  src:url("/fonts/Moonscape Italic TTF.ttf") format("truetype");
-  font-weight:400;
-  font-style:italic;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Orbit";
-  src:url("/fonts/Orbit-Regular.ttf") format("truetype");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
+a {
+  color: inherit;
+  text-decoration: none;
 }
