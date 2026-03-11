@@ -51,7 +51,7 @@ export default function PhotoPage() {
         ))}
       </aside>
 
-      <style jsx>{`
+       <style jsx>{`
         .page {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -68,7 +68,7 @@ export default function PhotoPage() {
 }
         .brand {
           margin: 0;
-          font-family: "Moonscape", serif;
+          font-family: var(--font-moonscape), serif;
           font-weight: 200;
           font-size: clamp(80px, 10vw, 1000px);
           line-height: 0.9;
@@ -79,7 +79,7 @@ export default function PhotoPage() {
        .year {
   margin-top: 18%;
   margin-left: 18%;
-  font-family: "Orbit", monospace;
+  font-family: var(--font-orbit), monospace;
   font-size: 10px;
   letter-spacing: 0.35em;
   color:#000000
@@ -93,7 +93,7 @@ export default function PhotoPage() {
   margin-left: 70%;
   align-self: center;
   width: 200px;
-  font-family: "Orbit", monospace;
+ font-family: var(--font-orbit), monospace;
   font-size: 10px;
   line-height: 16px;
   letter-spacing: 0.06em;
