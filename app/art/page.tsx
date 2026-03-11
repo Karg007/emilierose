@@ -53,8 +53,8 @@ export default function ArtPage() {
         ))}
       </aside>
 
-      <style jsx>{`
-       .page {
+     <style jsx>{`
+        .page {
           display: grid;
           grid-template-columns: 1fr 1fr;
           min-height: 100vh;
@@ -62,11 +62,12 @@ export default function ArtPage() {
         }
 
 
-        .left {
-          position: relative;
-          padding: 80px 90px;
-        }
-
+       .left {
+  padding: 70px 90px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
         .brand {
           margin: 0;
           font-family: "Moonscape", serif;
@@ -77,33 +78,32 @@ export default function ArtPage() {
           white-space: nowrap;
         }
 
-        .year {
-          position: absolute;
-          top: 55%;
-          left: 53%;
-          transform: translate(-50%, -50%);
-          font-family: "Orbit", monospace;
-          font-size: 15px;
-          letter-spacing: 0;
-          opacity: 0.5;
-          text-align: center;
-          user-select: none;
-        }
+       .year {
+  margin-top: 18%;
+  margin-left: 18%;
+  font-family: "Orbit", monospace;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  color:#000000
+  text-align: center;
+  user-select: none;
+  align-self: center;
+}
 
-        .textBlock {
-          position: absolute;
-          bottom: 90px;
-          left: 70%;
-          transform: translateX(-50%);
-          text-align: justify;
-          width: 250px;
-          font-family: "Orbit", monospace;
-          font-size: 13px;
-          line-height: 16px;
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-          color: rgba(0, 0, 0, 0.6);
-        }
+       .textBlock {
+  margin-top: 4%;
+  margin-left: 70%;
+  align-self: center;
+  width: 200px;
+  font-family: "Orbit", monospace;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  padding: 0;
+  text-align:justify;
+}
 
         .textBlock p {
           margin: 0 0 18px;
@@ -111,15 +111,14 @@ export default function ArtPage() {
 
         .highlight {
           background: var(--highlight);
-          padding: 2px 4px;
-          color: rgba(0, 0, 0, 0.65);
+          padding: 0px;
+          color: #000000;
           text-decoration:underline;
         }
 
         .signature {
           margin-top: 30px;
           text-align: right;
-          margin-bottom:25px;
         }
 
         .back {
