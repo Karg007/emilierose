@@ -93,14 +93,12 @@ export default function Home() {
        .links :global(a) {
   text-decoration: none;
   text-underline-offset: 4px;
-  opacity: 0.7;
   transition: opacity 0.2s ease;
   display: inline-block;
   cursor: pointer;
 }
 
 .links :global(a:hover) {
-  opacity: 1;
   text-decoration: underline;
 }
         @media (max-height: 1080px) {
