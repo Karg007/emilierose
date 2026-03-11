@@ -82,14 +82,14 @@ export default function PhotoPage() {
   font-family: "Orbit", monospace;
   font-size: 10px;
   letter-spacing: 0.35em;
-color:#000000
+  color:#000000
   text-align: center;
   user-select: none;
   align-self: center;
 }
 
        .textBlock {
-  margin-top: auto;
+  margin-top: 4%;
   margin-left: 70%;
   align-self: center;
   width: 200px;
@@ -99,7 +99,7 @@ color:#000000
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #000000;
-  padding-bottom: 90px;
+  padding: 0;
   text-align:justify;
 }
 
