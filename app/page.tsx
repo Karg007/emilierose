@@ -97,8 +97,7 @@ export default function Home() {
         
         }
 
-
-        .link:hover {
+        .link:hover a{
           opacity: 1;
           text-decoration:underline;
         }
