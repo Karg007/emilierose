@@ -83,7 +83,7 @@ export default function Home() {
           gap: 25px;
           padding-bottom: 1%;
           font-family: "Orbit", monospace;
-          font-size: 11px;
+          font-size: 14px;
           letter-spacing: 3px;
           text-transform: uppercase;
           color: #ffe7d8;
@@ -111,6 +111,7 @@ export default function Home() {
           }
           .links {
             margin-top: 4%;
+            font-size: 11px;
           }
         }
        
