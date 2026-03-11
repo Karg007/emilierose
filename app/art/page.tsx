@@ -44,9 +44,6 @@ export default function ArtPage() {
 
           <div className="signature">ÉMILIE ROSE XX</div>
 
-          <Link href="/" className="back">
-            &lt; RETOUR
-          </Link>
         </div>
       </section>
 
