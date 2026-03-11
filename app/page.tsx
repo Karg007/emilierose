@@ -107,20 +107,7 @@ export default function Home() {
             height: min(112vw, 351px);
           }
         }
-        @media (max-width: 900px) {
-          .title {
-            font-size: clamp(56px, 10vw, 108px);
-            padding-top: 52px;
-          }
-          .carousel {
-            margin-top: 44px;
-            width: min(86vw, 300px);
-            height: min(112vw, 383px);
-          }
-          .links {
-            margin-top: 54px;
-          }
-        }
+       
       `}</style>
     </main>
   );
