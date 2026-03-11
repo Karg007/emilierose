@@ -49,7 +49,7 @@ export default function Home() {
           padding-top: 4%;
           font-family: "Moonscape", serif;
           font-weight: 200;
-          font-size: 900%;
+          font-size: 800%;
           line-height: 0.9;
           text-transform: uppercase;
           text-align: center;
@@ -100,10 +100,10 @@ export default function Home() {
           text-decoration:underline;
         }
 
-        @media (max-width: 1600px) {
+        @media (max-width: 1080px) {
           .carousel {
-            width: min(86vw, 300px);
-            height: min(112vw, 383px);
+            width: min(86vw, 275px);
+            height: min(112vw, 351px);
           }
         }
         @media (max-width: 900px) {
