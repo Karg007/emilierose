@@ -87,6 +87,10 @@ export default function Home() {
           letter-spacing: 2px;
           text-transform: uppercase;
           color: #ffe7d8;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+          opacity: 0.7;
+
         }
 
 
