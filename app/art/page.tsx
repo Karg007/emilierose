@@ -166,6 +166,7 @@ export default function ArtPage() {
 
     .tw span{
       margin-left: 0px;
+      padding-left:20px;
     }
     
 
