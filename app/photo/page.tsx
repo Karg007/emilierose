@@ -195,7 +195,6 @@ export default function PhotoPage() {
     display:block;
     margin:auto;
     width: 100%;
-    height: 56vh;
     min-height: 320px;
   }
 
