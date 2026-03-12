@@ -121,27 +121,16 @@ export default function ArtPage() {
           text-align: right;
         }
 
-        .back {
-          display: block;
-          margin-top: 25px;
-          text-align: center;
-          font-size: 10px;
-          letter-spacing: 0.25em;
-          text-decoration: underline;
-          text-underline-offset: 2px;
-          opacity: 0.7;
-        }
 
         .right {
           position: relative;
-          overflow: hidden;
         }
 
         .right :global(img) {
           position: absolute;
           right: 0;
           width: auto;
-          height: 100vh;
+          height: 100%;
           object-position: right;
           transition: opacity 0.8s ease;
           display: block;
