@@ -32,7 +32,7 @@ export default function PhotoPage() {
           <p>
             ENCHANTÉE! MOI, C’EST ÉMILIE ROSE, PHOTOGRAPHE LIFESTYLE POUR LES AMOUREUX DES SOUVENIRS
             CANDIDES, UNIQUES ET CHALEUREUX. JE VOUS SOUHAITE LA BIENVENUE ICI, DANS MON PETIT COIN CRÉATIF DU WEB. L’INTÉGRALITÉ DU
-            SITE EST EN ROUTE MAIS EN ATTENDANT, ÉCRIVEZ-MOI AU <br/>{" "}
+            SITE EST EN ROUTE MAIS EN ATTENDANT, ÉCRIVEZ-MOI AU {" "}
             <a href="mailto:info@emilierose.ca" className="highlight">INFO@EMILIEROSE.CA</a> POUR RÉSERVER VOTRE MOMENT PHOTO.
           </p>
 
