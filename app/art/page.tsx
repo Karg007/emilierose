@@ -151,66 +151,58 @@ export default function ArtPage() {
           margin-left:50px;
         }
 
-        @media (max-width: 1000px) {
+         @media (max-width: 900px) {
   .page {
-    grid-template-columns: 1fr;
+    display:block;
+    max-width:100%;
+    margin:auto;
   }
 
   .left {
-    position: static;
-    padding: 36px 20px 28px;
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
+    display:block;
+    margin:auto;
+    padding: 70px 0px;
+    min-height: 0;
+    text-align:center;
   }
 
   .brand {
-    font-size: clamp(44px, 14vw, 72px);
-    line-height: 0.92;
-    white-space: normal;
-  }
+  display:block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: auto;
+    }
+
+    .tw span{
+      margin-left: 0px;
+    }
+    
 
   .year {
-    position: static;
-    transform: none;
-    margin-top: 28px;
-    align-self: flex-start;
     text-align: left;
-    font-size: 10px;
-    letter-spacing: 0.28em;
+    opacity: 0.5;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom:18%;
+    margin-left:0;
+    padding-left:18%;
   }
 
   .textBlock {
-    position: static;
-    transform: none;
-    width: 100%;
-    max-width: 340px;
-    margin-top: 32px;
-    font-size: 10px;
-    line-height: 15px;
-    letter-spacing: 0.04em;
+  margin: auto;
+  align-self: center;
+  width: 80%;
   }
 
-  .signature {
-    margin-top: 22px;
-    text-align: left;
-  }
-
-  .back {
-    margin-top: 20px;
-    text-align: left;
-  }
 
   .right {
-    height: 56vh;
-    min-height: 360px;
+    display:block;
+    margin:auto;
+    width: 100%;
+    min-height: 320px;
   }
 
-  .right :global(img) {
-    object-fit: contain;
-    padding: 14px;
-    background: #f3f3f3;
-  }
 }
       `}</style>
     </main>
