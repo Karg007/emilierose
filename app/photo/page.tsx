@@ -150,66 +150,89 @@ export default function PhotoPage() {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .left {
     position: static;
-    padding: 36px 20px 28px;
+    padding: 36px 18px 24px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
   }
 
   .brand {
-    font-size: clamp(44px, 14vw, 72px);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    font-size: clamp(40px, 13vw, 68px);
     line-height: 0.92;
     white-space: normal;
-    margin: 0;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   .year {
     position: static;
     transform: none;
-    margin-top: 28px;
+    margin-top: 24px;
     font-size: 10px;
     line-height: 16px;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.24em;
     text-align: left;
     opacity: 0.5;
+    width: 100%;
+    max-width: 100%;
   }
 
   .textBlock {
     position: static;
     transform: none;
+    margin-top: 24px;
     width: 100%;
-    max-width: 340px;
-    margin-top: 28px;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0;
     font-size: 10px;
     line-height: 15px;
-    letter-spacing: 0.04em;
-    padding: 0;
+    letter-spacing: 0.03em;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .textBlock p {
     margin: 0 0 14px;
   }
 
+  .highlight {
+    display: inline;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
   .signature {
-    margin-top: 20px;
+    margin-top: 18px;
     text-align: left;
+    width: 100%;
   }
 
   .back {
     display: inline-block;
     margin-top: 18px;
     text-align: left;
+    max-width: 100%;
   }
 
   .right {
     position: relative;
     width: 100%;
-    height: 58vh;
-    min-height: 340px;
+    height: 56vh;
+    min-height: 320px;
     overflow: hidden;
   }
 
