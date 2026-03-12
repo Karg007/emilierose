@@ -167,7 +167,7 @@ export default function PhotoPage() {
     margin: auto;
     }
 
-    .tw {
+    .tw span{
       margin-left: 0px;
     }
     
