@@ -169,6 +169,7 @@ export default function PhotoPage() {
     max-width: 100%;
     min-width: 0;
     margin: auto;
+    font-size: clamp(85px, 10vw, 1000px);
     }
 
     .tw span{
