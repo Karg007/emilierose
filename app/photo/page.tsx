@@ -200,7 +200,7 @@ export default function PhotoPage() {
     min-height: 320px;
   }
 
-  right img{
+  .right img{
   height:auto;
   }
 
