@@ -145,6 +145,10 @@ export default function PhotoPage() {
           display: block;
         }
 
+       .tw {
+        margin-left:50px;
+      }
+
        @media (max-width: 900px) {
   .page {
     display:block;
