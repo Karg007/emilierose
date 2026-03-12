@@ -167,8 +167,8 @@ export default function PhotoPage() {
     margin: auto;
     }
 
-    .tw{
-      margin-left:0;
+    .tw {
+      margin-left: 0px;
     }
     
 
