@@ -132,7 +132,6 @@ export default function PhotoPage() {
 
         .right {
           position: relative;
-          overflow: hidden;
         }
 
         .right :global(img) {
