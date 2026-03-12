@@ -151,6 +151,8 @@ export default function PhotoPage() {
   .left {
     display:block;
     margin:auto;
+    padding: 70px 90px;
+    min-height: 0;
   }
 
   .brand {
@@ -162,12 +164,6 @@ export default function PhotoPage() {
     }
 
   .year {
-    position: static;
-    transform: none;
-    margin-top: 24px;
-    font-size: 10px;
-    line-height: 16px;
-    letter-spacing: 0.24em;
     text-align: left;
     opacity: 0.5;
     width: 100%;
@@ -175,7 +171,7 @@ export default function PhotoPage() {
   }
 
   .textBlock {
-  margin-left: 0;
+  margin: auto;
   align-self: center;
   width: 80%;
   }
