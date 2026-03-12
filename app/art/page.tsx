@@ -140,7 +140,7 @@ export default function ArtPage() {
           margin-left:50px;
         }
 
-        @media (max-width: 900px) {
+@media (max-width: 900px) {
   .page {
     display:block;
     max-width:100%;
