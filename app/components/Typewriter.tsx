@@ -66,10 +66,14 @@ export default function Typewriter({ text, durationMs = 3000 }: TypewriterProps)
         }
 
         @media (max-width: 900px) {
-          .tw{
-          
+          .tw {
+            margin-left: 0px;
+            padding-left:20px;
           }
-        
+      
+          .cursor {
+            margin-left:20px;
+          }
         }
       `}</style>
     </span>
