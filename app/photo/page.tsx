@@ -174,6 +174,7 @@ export default function PhotoPage() {
 
     .tw span{
       margin-left: 0px;
+      padding-left:50px;
     }
     
 
