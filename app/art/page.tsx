@@ -151,7 +151,7 @@ export default function ArtPage() {
           margin-left:50px;
         }
 
-         @media (max-width: 900px) {
+        @media (max-width: 900px) {
   .page {
     display:block;
     max-width:100%;
@@ -201,6 +201,10 @@ export default function ArtPage() {
     margin:auto;
     width: 100%;
     min-height: 320px;
+  }
+
+  .right img{
+  height:auto;
   }
 
 }
