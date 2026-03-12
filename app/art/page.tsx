@@ -163,15 +163,6 @@ export default function ArtPage() {
     margin: auto;
     font-size: clamp(85px, 10vw, 1000px);
     }
-
-    .tw span{
-      margin-left: 0px;
-      padding-left:20px;
-    }
-
-    .cursor {
-      margin-left:20px;
-    }
     
 
   .year {
