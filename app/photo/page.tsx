@@ -158,8 +158,9 @@ export default function PhotoPage() {
   .left {
     display:block;
     margin:auto;
-    padding: 70px 90px;
+    padding: 70px 0px;
     min-height: 0;
+    text-align:center;
   }
 
   .brand {
