@@ -64,6 +64,13 @@ export default function Typewriter({ text, durationMs = 3000 }: TypewriterProps)
           55% { opacity: 0; }
           100% { opacity: 0; }
         }
+
+        @media (max-width: 900px) {
+          .tw{
+          
+          }
+        
+        }
       `}</style>
     </span>
   );
