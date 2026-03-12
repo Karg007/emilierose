@@ -116,6 +116,7 @@ export default function Home() {
             margin-top: 4%;
             font-size: 11px;
           }
+
         }
         @media (max-width: 768px) {
   .page {
@@ -146,20 +147,6 @@ export default function Home() {
   }
 }
 
-@media (max-width: 420px) {
-  .title {
-    font-size: 42px;
-  }
-
-  .carousel {
-    width: 84vw;
-    height: 108vw;
-  }
-
-  .link {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-  }
 }
        
       `}</style>
