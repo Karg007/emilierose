@@ -181,6 +181,7 @@ export default function PhotoPage() {
     opacity: 0.5;
     width: 100%;
     max-width: 100%;
+    margin-bottom:18%;
   }
 
   .textBlock {
