@@ -168,6 +168,10 @@ export default function ArtPage() {
       margin-left: 0px;
       padding-left:20px;
     }
+
+    .cursor {
+      margin-left:20px;
+    }
     
 
   .year {
