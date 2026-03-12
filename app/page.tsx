@@ -91,16 +91,21 @@ export default function Home() {
         }
 
        .links :global(a) {
-  text-decoration: none;
-  text-underline-offset: 4px;
-  transition: opacity 0.2s ease;
-  display: inline-block;
-  cursor: pointer;
-}
+          text-decoration: none;
+          text-underline-offset: 4px;
+          transition: opacity 0.2s ease;
+          display: inline-block;
+          cursor: pointer;
+        }
 
-.links :global(a:hover) {
-  text-decoration: underline;
-}
+      .links :global(a:hover) {
+        text-decoration: underline;
+      }
+
+      .tw {
+        margin-left:50px;
+      }
+      
         @media (max-height: 1080px) {
           .carousel {
             margin-top: 4%;
