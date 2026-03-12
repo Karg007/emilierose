@@ -42,7 +42,7 @@ export default function Typewriter({ text, durationMs = 3000 }: TypewriterProps)
         .tw {
           display: inline-flex;
           align-items: center;
-          margin-left:50px;
+        
         }
 
         .cursor {
