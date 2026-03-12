@@ -146,7 +146,11 @@ export default function PhotoPage() {
         }
 
        @media (max-width: 900px) {
-
+  .page {
+    display:block;
+    max-width:100%;
+    margin:auto;
+  }
 
   .left {
     display:block;
@@ -162,6 +166,11 @@ export default function PhotoPage() {
     min-width: 0;
     margin: auto;
     }
+
+    .tw{
+      margin-left:0;
+    }
+    
 
   .year {
     text-align: left;
