@@ -138,7 +138,7 @@ export default function PhotoPage() {
           position: absolute;
           right: 0;
           width: auto;
-          height: auto;
+          height: 100%;
           object-position: right;
           transition: opacity 0.8s ease;
           display: block;
@@ -198,6 +198,10 @@ export default function PhotoPage() {
     margin:auto;
     width: 100%;
     min-height: 320px;
+  }
+
+  right img{
+  height:auto;
   }
 
 }
