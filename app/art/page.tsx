@@ -147,6 +147,10 @@ export default function ArtPage() {
           display: block;
         }
 
+        .tw {
+          margin-left:50px;
+        }
+
         @media (max-width: 1000px) {
   .page {
     grid-template-columns: 1fr;
