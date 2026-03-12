@@ -182,6 +182,8 @@ export default function PhotoPage() {
     width: 100%;
     max-width: 100%;
     margin-bottom:18%;
+    margin-left:0;
+    padding-left:18%;
   }
 
   .textBlock {
