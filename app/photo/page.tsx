@@ -68,25 +68,7 @@ export default function PhotoPage() {
           </div>
         </section>
 
-        <section className="photo-twoUp photo-twoUp--continuation">
-          <div className="photo-imageCard photo-imageCard--wideShort">
-            <img
-              src="/images/photo/01.jpg"
-              alt="Suite visuelle de la première image"
-              className="photo-image"
-              style={{ objectPosition: "center 82%" }}
-            />
-          </div>
-
-          <div className="photo-imageCard photo-imageCard--wideShort">
-            <img
-              src="/images/photo/02.jpg"
-              alt="Suite visuelle de la deuxième image"
-              className="photo-image"
-              style={{ objectPosition: "center 84%" }}
-            />
-          </div>
-        </section>
+      
 
         <section className="photo-textSection photo-textSection--first">
           <div className="photo-counter">
