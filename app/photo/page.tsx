@@ -3,12 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-type MenuItem = {
-  label: string;
-  href: string;
-};
-
-const menuItems: MenuItem[] = [
+const menuItems = [
   { label: "ACCUEIL", href: "/" },
   { label: "IMAGERIE", href: "/photo" },
   { label: "À PROPOS", href: "/about" },
@@ -19,6 +14,18 @@ const menuItems: MenuItem[] = [
 
 export default function PhotoPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 36);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
@@ -31,75 +38,101 @@ export default function PhotoPage() {
 
   return (
     <>
-      <main className="photo-page">
-        <button
-          type="button"
-          className="photo-indexButton"
-          onClick={() => setMenuOpen(true)}
-          aria-label="Ouvrir le menu"
-        >
-          INDEX
-        </button>
+      <div className={`photo-topBar ${scrolled || menuOpen ? "is-visible" : ""}`} />
 
+      <main className="photo-page">
         <section className="photo-hero">
-          <div className="photo-heroBrand">
-            <h1 className="photo-mainLogo">ÉMILIE ROSE</h1>
-            <span className="photo-heroLine" aria-hidden="true" />
+          <div className="photo-heroTop">
+            <div className="photo-heroBrand">
+              <h1 className="photo-mainLogo">ÉMILIE ROSE</h1>
+              <span className="photo-heroLine" aria-hidden="true" />
+            </div>
+
+            <button
+              type="button"
+              className={`photo-indexButton ${
+                scrolled || menuOpen ? "photo-indexButton--floating" : "photo-indexButton--hero"
+              }`}
+              onClick={() => setMenuOpen(true)}
+              aria-label="Ouvrir le menu"
+            >
+              INDEX
+            </button>
           </div>
 
           <div className="photo-twoUp photo-twoUp--hero">
-            <div className="photo-imageCard photo-imageCard--tall">
+            <div className="photo-imageCard photo-imageCard--heroTall">
               <img
                 src="/images/photo/01.jpg"
-                alt="Portrait lifestyle"
+                alt="Photographie lifestyle"
                 className="photo-image"
-                style={{ objectPosition: "center 28%" }}
+                style={{ objectPosition: "center 24%" }}
               />
             </div>
 
-            <div className="photo-imageCard photo-imageCard--tall">
+            <div className="photo-imageCard photo-imageCard--heroTall">
               <img
                 src="/images/photo/02.jpg"
-                alt="Portrait lifestyle détail"
+                alt="Photographie lifestyle détail"
                 className="photo-image"
-                style={{ objectPosition: "center 36%" }}
+                style={{ objectPosition: "center 32%" }}
               />
             </div>
           </div>
         </section>
 
-      
-
-        <section className="photo-textSection photo-textSection--first">
-          <div className="photo-counter">
-            <span>01</span>
-            <span>05</span>
+        <section className="photo-twoUp photo-twoUp--bridgeTop">
+          <div className="photo-imageCard photo-imageCard--bridge">
+            <img
+              src="/images/photo/01.jpg"
+              alt="Suite de la première photographie"
+              className="photo-image"
+              style={{ objectPosition: "center 84%" }}
+            />
           </div>
 
-          <div className="photo-editorialText">
-            <p>
-              Les fesses toutes neuves de bébé.
-              <br />
-              Vergetures de maternité.
-              <br />
-              Draps de coton fripés.
-            </p>
+          <div className="photo-imageCard photo-imageCard--bridge">
+            <img
+              src="/images/photo/02.jpg"
+              alt="Suite de la deuxième photographie"
+              className="photo-image"
+              style={{ objectPosition: "center 86%" }}
+            />
+          </div>
+        </section>
 
-            <p>
-              Les petites couettes de travers.
-              <br />
-              Le chandail mis à l&apos;envers,
-            </p>
+        <section className="photo-copyBlock photo-copyBlock--first">
+          <div className="photo-copyGrid">
+            <div className="photo-copyCounter">
+              <span>01</span>
+              <span>05</span>
+            </div>
 
-            <p>
-              Tague, cache-cache, sauts dans le lit.
-              <br />
-              Crises de larme.
-              <br />
-              Crises d&apos;amour.
-              <br />
-              ...
-            </p>
+            <div className="photo-editorialText">
+              <p>
+                Les fesses toutes neuves de bébé.
+                <br />
+                Vergetures de maternité.
+                <br />
+                Draps de coton fripés.
+              </p>
+
+              <p>
+                Les petites couettes de travers.
+                <br />
+                Le chandail mis à l&apos;envers,
+              </p>
+
+              <p>
+                Tague, cache-cache, sauts dans le lit.
+                <br />
+                Crises de larme.
+                <br />
+                Crises d&apos;amour.
+                <br />
+                ...
+              </p>
+            </div>
           </div>
         </section>
 
@@ -107,15 +140,15 @@ export default function PhotoPage() {
           <div className="photo-imageCard photo-imageCard--feature">
             <img
               src="/images/photo/03.jpg"
-              alt="Moment en famille"
+              alt="Photographie centrale"
               className="photo-image"
-              style={{ objectPosition: "center 52%" }}
+              style={{ objectPosition: "center 54%" }}
             />
           </div>
         </section>
 
-        <section className="photo-textSection photo-textSection--second">
-          <div className="photo-editorialText photo-editorialText--left">
+        <section className="photo-copyBlock photo-copyBlock--second">
+          <div className="photo-editorialText photo-editorialText--second">
             <p>
               Ces moments trop anodins.
               <br />
@@ -135,10 +168,11 @@ export default function PhotoPage() {
             </p>
           </div>
 
-          <div className="photo-ctaGroup">
+          <div className="photo-buttons">
             <Link href="/about" className="photo-outlineButton">
               + SUR MON APPROCHE
             </Link>
+
             <Link href="/photo" className="photo-outlineButton">
               VOIR L&apos;IMAGERIE
             </Link>
@@ -146,15 +180,16 @@ export default function PhotoPage() {
         </section>
 
         <section className="photo-footerImageWrap">
-          <div className="photo-imageCard photo-imageCard--footerStart">
+          <div className="photo-imageCard photo-imageCard--footerA">
             <img
               src="/images/photo/04.jpg"
-              alt="Main d'un parent et d'un enfant"
+              alt="Début de l’image avant le footer"
               className="photo-image"
               style={{ objectPosition: "center 18%" }}
             />
           </div>
         </section>
+
 
         <footer className="photo-footer">
           <div className="photo-footerMonogram">
@@ -190,6 +225,8 @@ export default function PhotoPage() {
           aria-modal="true"
           aria-label="Menu principal"
         >
+          <div className="photo-menuTopBar" />
+
           <button
             type="button"
             className="photo-menuClose"
@@ -222,20 +259,66 @@ export default function PhotoPage() {
       )}
 
       <style jsx>{`
+        .photo-topBar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 74px;
+          background: rgba(255, 255, 255, 0.98);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+          z-index: 40;
+          transform: translateY(-100%);
+          transition: transform 0.28s ease;
+        }
+
+        .photo-topBar.is-visible {
+          transform: translateY(0);
+        }
+
         .photo-page {
           min-height: 100vh;
           background: #efefed;
           color: #111;
-          padding: 58px 52px 70px;
+          padding: 46px 52px 70px;
           position: relative;
+        }
+
+        .photo-hero {
+          position: relative;
+        }
+
+        .photo-heroTop {
+          position: relative;
+          min-height: 150px;
+          margin-bottom: 48px;
+        }
+
+        .photo-heroBrand {
+          display: flex;
+          align-items: flex-start;
+          gap: 36px;
+          width: fit-content;
+        }
+
+        .photo-mainLogo {
+          margin: 0;
+          font-family: var(--font-moonscape), serif;
+          font-size: clamp(68px, 7vw, 108px);
+          font-weight: 300;
+          line-height: 0.9;
+          letter-spacing: 0;
+        }
+
+        .photo-heroLine {
+          width: 1px;
+          height: 116px;
+          background: rgba(0, 0, 0, 0.65);
+          margin-top: 2px;
         }
 
         .photo-indexButton,
         .photo-menuClose {
-          position: fixed;
-          top: 28px;
-          right: 50px;
-          z-index: 60;
           border: 0;
           background: transparent;
           padding: 0;
@@ -244,35 +327,24 @@ export default function PhotoPage() {
           font-size: 10px;
           line-height: 1;
           letter-spacing: 0.6em;
-          color: #5b5b5b;
           text-transform: uppercase;
+          color: #545454;
         }
 
-        .photo-hero {
-          margin-top: 2px;
+        .photo-indexButton {
+          z-index: 61;
         }
 
-        .photo-heroBrand {
-          display: flex;
-          align-items: flex-start;
-          gap: 38px;
-          margin-bottom: 64px;
+        .photo-indexButton--hero {
+          position: absolute;
+          right: 0;
+          top: 92px;
         }
 
-        .photo-mainLogo {
-          margin: 0;
-          font-family: var(--font-moonscape), serif;
-          font-size: clamp(62px, 7vw, 104px);
-          font-weight: 300;
-          line-height: 0.92;
-          letter-spacing: 0;
-        }
-
-        .photo-heroLine {
-          width: 1px;
-          height: 118px;
-          background: rgba(0, 0, 0, 0.6);
-          margin-top: 2px;
+        .photo-indexButton--floating {
+          position: fixed;
+          top: 31px;
+          right: 52px;
         }
 
         .photo-twoUp {
@@ -282,37 +354,43 @@ export default function PhotoPage() {
         }
 
         .photo-twoUp--hero {
-          margin-top: 8px;
+          margin-top: 0;
         }
 
-        .photo-twoUp--continuation {
+        .photo-twoUp--bridgeTop {
           margin-top: 34px;
         }
 
         .photo-imageCard {
-          overflow: hidden;
-          background: #ddd;
           width: 100%;
+          overflow: hidden;
+          background: #d8d8d6;
         }
 
-        .photo-imageCard--tall {
-          aspect-ratio: 0.88 / 1;
+        .photo-imageCard--heroTall {
+          aspect-ratio: 0.885 / 1;
         }
 
-        .photo-imageCard--wideShort {
-          aspect-ratio: 2.2 / 0.52;
+        .photo-imageCard--bridge {
+          aspect-ratio: 2.24 / 0.52;
         }
 
         .photo-imageCard--feature {
-          width: min(100%, 924px);
+          width: min(100%, 930px);
           margin: 0 auto;
           aspect-ratio: 1.71 / 1;
         }
 
-        .photo-imageCard--footerStart {
-          width: min(100%, 585px);
+        .photo-imageCard--footerA {
+          width: min(100%, 610px);
           margin: 0 auto;
-          aspect-ratio: 1 / 1.1;
+          aspect-ratio: 1 / 1.14;
+        }
+
+        .photo-imageCard--footerB {
+          width: min(100%, 610px);
+          margin: 0 auto;
+          aspect-ratio: 1.52 / 0.66;
         }
 
         .photo-image {
@@ -322,38 +400,37 @@ export default function PhotoPage() {
           object-fit: cover;
         }
 
-        .photo-textSection {
-          position: relative;
+        .photo-copyBlock--first {
+          margin-top: 118px;
         }
 
-        .photo-textSection--first {
-          min-height: 420px;
-          margin-top: 116px;
+        .photo-copyGrid {
+          width: min(100%, 760px);
+          margin-left: 22%;
+          display: grid;
+          grid-template-columns: 54px minmax(280px, 420px);
+          column-gap: 110px;
+          align-items: start;
         }
 
-        .photo-counter {
-          position: absolute;
-          left: 21.5%;
-          top: 8px;
+        .photo-copyCounter {
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 9px;
+          padding-top: 2px;
           font-family: var(--font-orbit), Arial, sans-serif;
-          font-size: 13px;
+          font-size: 12px;
           line-height: 1;
-          letter-spacing: 0.28em;
-          color: #202020;
+          letter-spacing: 0.3em;
+          color: #1b1b1b;
         }
 
         .photo-editorialText {
-          width: min(100%, 420px);
-          margin-left: 25.5%;
           font-family: "Courier New", monospace;
           font-size: 12px;
-          line-height: 1.25;
+          line-height: 1.24;
           letter-spacing: 0.04em;
-          color: #1d1d1d;
-          white-space: normal;
+          color: #1b1b1b;
         }
 
         .photo-editorialText p {
@@ -361,42 +438,42 @@ export default function PhotoPage() {
         }
 
         .photo-featureImageWrap {
-          margin-top: 52px;
+          margin-top: 62px;
         }
 
-        .photo-textSection--second {
-          min-height: 400px;
-          margin-top: 56px;
+        .photo-copyBlock--second {
+          margin-top: 60px;
         }
 
-        .photo-editorialText--left {
-          margin-left: 12.8%;
+        .photo-editorialText--second {
+          width: min(100%, 360px);
+          margin-left: 13%;
         }
 
-        .photo-ctaGroup {
-          width: 100%;
+        .photo-buttons {
+          margin-top: 120px;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 22px;
-          margin-top: 124px;
+          gap: 24px;
         }
 
         .photo-outlineButton {
-          width: 210px;
-          min-height: 38px;
-          border: 1px solid rgba(0, 0, 0, 0.65);
+          width: 216px;
+          min-height: 39px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 10px 16px;
+          border: 1px solid rgba(0, 0, 0, 0.66);
           text-decoration: none;
+          background: transparent;
           color: #222;
           font-family: var(--font-orbit), Arial, sans-serif;
           font-size: 10px;
           line-height: 1;
           letter-spacing: 0.34em;
           text-transform: uppercase;
+          padding: 10px 16px;
           transition: background 0.2s ease, color 0.2s ease;
         }
 
@@ -406,11 +483,15 @@ export default function PhotoPage() {
         }
 
         .photo-footerImageWrap {
-          margin-top: 84px;
+          margin-top: 86px;
+        }
+
+        .photo-footerImageWrap--continuation {
+          margin-top: 30px;
         }
 
         .photo-footer {
-          padding: 72px 0 10px;
+          padding: 76px 0 10px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -429,7 +510,7 @@ export default function PhotoPage() {
         .photo-footerMonogramLine {
           width: 1px;
           height: 52px;
-          background: rgba(0, 0, 0, 0.6);
+          background: rgba(0, 0, 0, 0.62);
         }
 
         .photo-footerLinks,
@@ -439,20 +520,20 @@ export default function PhotoPage() {
           line-height: 1.4;
           letter-spacing: 0.34em;
           text-transform: uppercase;
-          color: #4a4a4a;
+          color: #4d4d4d;
         }
 
         .photo-footerLinks {
           display: flex;
           align-items: center;
+          justify-content: center;
           gap: 10px;
           flex-wrap: wrap;
-          justify-content: center;
         }
 
         .photo-footerLinks a {
-          color: inherit;
           text-decoration: none;
+          color: inherit;
         }
 
         .photo-footerMeta {
@@ -463,8 +544,25 @@ export default function PhotoPage() {
         .photo-menuOverlay {
           position: fixed;
           inset: 0;
-          z-index: 80;
-          background: #efefed;
+          z-index: 90;
+          background: #eceae4;
+        }
+
+        .photo-menuTopBar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 74px;
+          background: rgba(255, 255, 255, 0.98);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .photo-menuClose {
+          position: fixed;
+          top: 31px;
+          right: 52px;
+          z-index: 95;
         }
 
         .photo-menuInner {
@@ -473,41 +571,42 @@ export default function PhotoPage() {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding: 80px 24px;
+          padding: 120px 24px 80px;
         }
 
         .photo-menuTitleWrap {
           display: flex;
           align-items: flex-start;
-          gap: 34px;
-          margin-bottom: 72px;
+          gap: 38px;
+          margin-bottom: 74px;
         }
 
         .photo-menuTitle {
           margin: 0;
           font-family: var(--font-moonscape), serif;
-          font-size: clamp(70px, 7vw, 116px);
-          font-weight: 300;
+          font-size: clamp(76px, 8vw, 122px);
           line-height: 0.9;
+          font-weight: 300;
+          color: #111;
         }
 
         .photo-menuTitleLine {
           width: 1px;
           height: 118px;
-          background: rgba(0, 0, 0, 0.65);
-          margin-top: 4px;
+          background: rgba(0, 0, 0, 0.66);
+          margin-top: 2px;
         }
 
         .photo-menuNav {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          gap: 12px;
+          gap: 10px;
         }
 
         .photo-menuLink {
           text-decoration: none;
-          color: #2d2d2d;
+          color: #2b2b2b;
           font-family: var(--font-orbit), Arial, sans-serif;
           font-size: 18px;
           line-height: 1.25;
@@ -515,63 +614,63 @@ export default function PhotoPage() {
           text-transform: uppercase;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1100px) {
           .photo-page {
-            padding: 44px 28px 56px;
+            padding: 46px 28px 60px;
           }
 
-          .photo-indexButton,
+          .photo-indexButton--floating,
           .photo-menuClose {
             right: 28px;
           }
 
-          .photo-twoUp {
-            gap: 28px;
-          }
-
-          .photo-counter {
-            left: 8px;
-            position: relative;
-            top: 0;
-            margin-bottom: 34px;
-          }
-
-          .photo-editorialText,
-          .photo-editorialText--left {
-            margin-left: 0;
-          }
-
-          .photo-textSection--first,
-          .photo-textSection--second {
-            min-height: auto;
+          .photo-copyGrid {
+            margin-left: 10%;
+            column-gap: 72px;
           }
         }
 
         @media (max-width: 768px) {
-          .photo-page {
-            padding: 28px 16px 44px;
+          .photo-topBar,
+          .photo-menuTopBar {
+            height: 62px;
           }
 
-          .photo-indexButton,
-          .photo-menuClose {
-            top: 18px;
-            right: 16px;
-            font-size: 9px;
-            letter-spacing: 0.45em;
+          .photo-page {
+            padding: 28px 16px 46px;
+          }
+
+          .photo-heroTop {
+            min-height: auto;
+            margin-bottom: 36px;
           }
 
           .photo-heroBrand {
             gap: 18px;
-            margin-bottom: 40px;
           }
 
           .photo-mainLogo {
-            font-size: clamp(46px, 16vw, 72px);
+            font-size: clamp(48px, 16vw, 74px);
           }
 
           .photo-heroLine,
           .photo-menuTitleLine {
-            height: 76px;
+            height: 78px;
+          }
+
+          .photo-indexButton--hero {
+            position: static;
+            display: block;
+            margin-left: auto;
+            margin-top: 12px;
+          }
+
+          .photo-indexButton--floating,
+          .photo-menuClose {
+            top: 27px;
+            right: 16px;
+            font-size: 9px;
+            letter-spacing: 0.45em;
           }
 
           .photo-twoUp {
@@ -579,47 +678,77 @@ export default function PhotoPage() {
             gap: 18px;
           }
 
-          .photo-imageCard--tall {
-            aspect-ratio: 0.82 / 1;
+          .photo-twoUp--bridgeTop {
+            margin-top: 18px;
           }
 
-          .photo-imageCard--wideShort {
-            aspect-ratio: 1.8 / 0.62;
+          .photo-imageCard--bridge {
+            aspect-ratio: 1.85 / 0.64;
           }
 
-          .photo-textSection--first {
+          .photo-copyBlock--first {
             margin-top: 72px;
           }
 
-          .photo-featureImageWrap {
-            margin-top: 36px;
-          }
-
-          .photo-textSection--second {
-            margin-top: 38px;
-          }
-
-          .photo-editorialText {
+          .photo-copyGrid {
             width: 100%;
+            margin-left: 0;
+            grid-template-columns: 42px minmax(0, 1fr);
+            column-gap: 28px;
+          }
+
+          .photo-copyCounter {
             font-size: 11px;
           }
 
-          .photo-ctaGroup {
+          .photo-editorialText,
+          .photo-editorialText--second {
+            font-size: 11px;
+            width: 100%;
+            margin-left: 0;
+          }
+
+          .photo-featureImageWrap {
+            margin-top: 38px;
+          }
+
+          .photo-copyBlock--second {
+            margin-top: 42px;
+          }
+
+          .photo-buttons {
             margin-top: 58px;
+            gap: 18px;
           }
 
           .photo-outlineButton {
             width: min(100%, 250px);
           }
 
-          .photo-imageCard--feature,
-          .photo-imageCard--footerStart {
-            width: 100%;
+          .photo-footerImageWrap {
+            margin-top: 58px;
           }
 
-          .photo-footer {
-            padding-top: 52px;
-            gap: 22px;
+          .photo-footerImageWrap--continuation {
+            margin-top: 18px;
+          }
+
+          .photo-menuInner {
+            padding: 110px 20px 60px;
+          }
+
+          .photo-menuTitleWrap {
+            gap: 18px;
+            margin-bottom: 42px;
+          }
+
+          .photo-menuTitle {
+            font-size: clamp(52px, 16vw, 76px);
+          }
+
+          .photo-menuLink {
+            font-size: 14px;
+            letter-spacing: 0.28em;
           }
 
           .photo-footerMonogram {
@@ -635,20 +764,6 @@ export default function PhotoPage() {
             font-size: 8px;
             letter-spacing: 0.24em;
             text-align: center;
-          }
-
-          .photo-menuTitleWrap {
-            gap: 18px;
-            margin-bottom: 46px;
-          }
-
-          .photo-menuTitle {
-            font-size: clamp(52px, 16vw, 76px);
-          }
-
-          .photo-menuLink {
-            font-size: 14px;
-            letter-spacing: 0.28em;
           }
         }
       `}</style>
