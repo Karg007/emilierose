@@ -81,25 +81,6 @@ export default function PhotoPage() {
           </div>
         </section>
 
-        <section className="photo-twoUp photo-twoUp--bridgeTop">
-          <div className="photo-imageCard photo-imageCard--bridge">
-            <img
-              src="/images/photo/01.jpg"
-              alt="Suite de la première photographie"
-              className="photo-image"
-              style={{ objectPosition: "center 84%" }}
-            />
-          </div>
-
-          <div className="photo-imageCard photo-imageCard--bridge">
-            <img
-              src="/images/photo/02.jpg"
-              alt="Suite de la deuxième photographie"
-              className="photo-image"
-              style={{ objectPosition: "center 86%" }}
-            />
-          </div>
-        </section>
 
         <section className="photo-copyBlock photo-copyBlock--first">
           <div className="photo-copyGrid">
